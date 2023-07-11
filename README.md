@@ -5,7 +5,7 @@ This repository include the data and notebooks used for the second project I've 
 # The project
 ## Extreme weather event days in India
 An analysis of the extreme weather events that were reported in the first four months of 2023 and 2023
-[Read this story.](https://rajitsengupta.github.io/extreme_weather_events_India/)
+[Read this story.](https://rajitsengupta.github.io/extreme_weather_events_India_2023/)
 
 
 # New tools and skills
