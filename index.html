@@ -1,101 +1,3560 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rajit Sengupta's Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: auto;
+            padding: 50px 10px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .serif {
+            font-family: 'Lora', serif;
+        }
+
+        .sans-serif {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* choose a light or dark theme to add to the body tag. */
+        .dark-theme {
+            background-color: #151515;
+            color: #fbfbfb;
+        }
+
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .header {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .story-body,
+        .header,
+        .chart-section,
+        .footer {
+            margin: auto;
+            max-width: 700px;
+        }
+
+        .footer {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .chart-section.wide {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .chart-section.wide p.chart-title {
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chart-section.wide p.chart-subhead {
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* text styles */
+
+        /* https://cssgenerator.org/text-shadow-css-generator.html */
+        /* #shadow {
+            text-shadow: 3px 4px 2px rgba(233, 105, 105, 0.6);
+        } */
+
+
+        p.kicker {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1.headline {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+            margin-top: 1rem;
+            font-weight: 800;
+        }
+
+        h2.subhead {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            margin-bottom: 0;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        p.body-text {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        h3.section-head {
+            font-size: 2rem;
+            margin: 40px 0 10px 0;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .byline {
+            font-size: 1.1rem;
+            line-height: 0.75;
+            margin-top: 1.5rem;
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            line-height: 1;
+            margin-top: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+
+        p.note {
+            font-size: 0.85rem;
+        }
+
+        /* chart styles */
+
+        .chart-section {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 0px;
+        }
+
+        .story-body .chart-section {
+            padding-top: 0px;
+        }
+
+
+        .chart-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        p.chart-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            max-width: 700px;
+            margin: 0px auto 5px auto;
+        }
+
+        p.chart-subhead {
+            margin: 0 auto;
+            max-width: 700px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        p.chart-label {
+            margin: 0 0 5px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .chart-row .chart {
+            width: 100%;
+            padding-right: 15px;
+            min-width: calc(25% - 15px);
+
+        }
+
+
+
+        p.chart-source {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+
+
+
+
+        /* photos */
+
+        .photo-section {
+            padding: 30px 0px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            max-width: 1200px;
+        }
+
+        .photo {
+            width: 100%;
+            padding-right: 15px;
+        }
+
+        .photo img {
+            width: 100%;
+        }
+
+        p.caption {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* mobile */
+        @media (max-width:700px) {
+
+            .chart-row {
+                display: block;
+            }
+
+            .chart-row .chart {
+                padding: 0;
+            }
+
+            .photo-section {
+                display: block;
+            }
+
+            .photo {
+                padding: 0;
+            }
+
+        }
+    </style>
+    <style>
+        /* These are the styles for ai2html */
+
+        #g-template-laptop,
+        #g-template-medium,
+        #g-template-mobile {
+            display: none;
+        }
+
+        @media (max-width: 490px) {
+            #g-template-mobile {
+                display: block;
+            }
+        }
+
+        @media (min-width: 490px) and (max-width: 620px) {
+            #g-template-laptop {
+                display: block;
+            }
+        }
+
+        @media (min-width: 620px) {
+            #g-template-medium {
+                display: block;
+            }
+        }
+    </style>
+
+    <!-- google fonts: Open Sans (sans-serif) and Lora (serif) -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap" rel="stylesheet">
+
+    <title>This is your title</title>
+</head>
+
+<body class="light-theme">
+    <!-- all of the content on your html page goes inside the body -->
+
+    <section class="header">
+        <p class="kicker">Extreme Weather Events</p>
+        <h1 class="headline">We have cooked ourselves a storm</h1>
+        <h3 class="subhead">In the first four months of 2022, heatwaves were the most frequent extreme weather event in India. A year later, hailstorms became the most frequent extreme weather event. In fact, of the 84 days with extreme weather events in 2023, hailstorms were reported on 58 days. </h2>
+        <p target="byline" href="https://www.linkedin.com/in/rajit-sengupta/" >Rajit Sengupta</p>
+        <p class="date">Published July 11, 2023</p>
+    </section>
+
+	<section class="image">
+		<img src="weather-effects-composition.jpg" class="img-fluid" class="text-center" alt="Extreme weather event days between January and April 20223 in India">
+	</section>
+
+    <section class="story-body">
+		<br><br>
+		
+        <p class="body-text serif">For the past two days, i.e 9th and 10th July 2023, India has been experiencing heavier-than-usual rainfall. The schools and offices were closed down due to the rains and news is filled with reports of rivers overflowing. The Beas river in the state of Himachal Pradesh has washed away three bridges. My work with the Centre for Science and Environment data centre has made me aware of the silent increase in the proliferation of extreme weather events around us. </p>
+        <p class="body-text serif">The current project was born out of my work tracking extreme weather events across my country, India. The project compares the occurrence of extreme weather events in the first 120 days of last year, i.e, 2022 and this year, 2023. This year, the 33 Indian states and Union territories of India experienced extreme weather events of one sort or another on 84, out of the 120 days I have mapped.  </p>
+		<br><br>
+    </section>
+
+
+	<style media="screen,print">
+		#g-2023-4-months-box ,
+		#g-2023-4-months-box .g-artboard {
+			margin:0 auto;
+		}
+		#g-2023-4-months-box p {
+			margin:0;
+		}
+		#g-2023-4-months-box .g-aiAbs {
+			position:absolute;
+		}
+		#g-2023-4-months-box .g-aiImg {
+			position:absolute;
+			top:0;
+			display:block;
+			width:100% !important;
+		}
+		#g-2023-4-months-box .g-aiSymbol {
+			position: absolute;
+			box-sizing: border-box;
+		}
+		#g-2023-4-months-box .g-aiPointText p { white-space: nowrap; }
+		#g-2023-4-months-lg {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2023-4-months-lg p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:19px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:16px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2023-4-months-lg .g-pstyle0 {
+			line-height:42px;
+			height:42px;
+			font-size:35px;
+		}
+		#g-2023-4-months-lg .g-pstyle1 {
+			height:19px;
+		}
+		#g-2023-4-months-lg .g-pstyle2 {
+			line-height:11px;
+			height:11px;
+			font-size:10px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-lg .g-pstyle3 {
+			line-height:17px;
+			height:17px;
+			font-size:14px;
+			text-align:right;
+		}
+		#g-2023-4-months-lg .g-pstyle4 {
+			line-height:13px;
+			height:13px;
+			font-size:11px;
+		}
+		#g-2023-4-months-lg .g-pstyle5 {
+			line-height:13px;
+			height:13px;
+			font-size:11px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-lg .g-pstyle6 {
+			line-height:13px;
+			height:13px;
+			font-size:11px;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-lg .g-pstyle7 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+		}
+		#g-2023-4-months-lg .g-pstyle8 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-lg .g-pstyle9 {
+			line-height:13px;
+			font-size:11px;
+			text-align:center;
+		}
+		#g-2023-4-months-lg .g-pstyle10 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+		}
+		#g-2023-4-months-lg .g-pstyle11 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:right;
+		}
+		#g-2023-4-months-lg .g-pstyle12 {
+			line-height:58px;
+			height:58px;
+			font-size:48px;
+			text-align:center;
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-lg .g-pstyle13 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:center;
+		}
+		#g-2023-4-months-lg .g-pstyle14 {
+			line-height:13px;
+			height:13px;
+			font-size:11px;
+			text-align:center;
+		}
+		#g-2023-4-months-lg .g-pstyle15 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+			text-align:center;
+		}
+		#g-2023-4-months-lg .g-pstyle16 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:right;
+		}
+		#g-2023-4-months-lg .g-pstyle17 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-lg .g-pstyle18 {
+			font-weight:500;
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+		}
+		#g-2023-4-months-lg .g-cstyle0 {
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-lg .g-cstyle1 {
+			font-weight:bold;
+		}
+		#g-2023-4-months-xs {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2023-4-months-xs p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:17px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:14px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2023-4-months-xs .g-pstyle0 {
+			line-height:31px;
+			height:31px;
+			font-size:26px;
+		}
+		#g-2023-4-months-xs .g-pstyle1 {
+			height:17px;
+		}
+		#g-2023-4-months-xs .g-pstyle2 {
+			height:17px;
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-xs .g-pstyle3 {
+			line-height:58px;
+			height:58px;
+			font-size:48px;
+			text-align:center;
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-xs .g-pstyle4 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:center;
+		}
+		#g-2023-4-months-xs .g-pstyle5 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+		}
+		#g-2023-4-months-xs .g-pstyle6 {
+			line-height:6px;
+			height:6px;
+			font-size:5px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-xs .g-pstyle7 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+		}
+		#g-2023-4-months-xs .g-pstyle8 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-xs .g-pstyle9 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-xs .g-pstyle10 {
+			line-height:12px;
+			font-size:10px;
+			text-align:center;
+		}
+		#g-2023-4-months-xs .g-pstyle11 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+		}
+		#g-2023-4-months-xs .g-pstyle12 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			text-align:right;
+		}
+		#g-2023-4-months-xs .g-pstyle13 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-xs .g-pstyle14 {
+			font-weight:500;
+			line-height:5px;
+			height:5px;
+			font-size:4px;
+		}
+		#g-2023-4-months-xs .g-pstyle15 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:right;
+		}
+		#g-2023-4-months-xs .g-cstyle0 {
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-xs .g-cstyle1 {
+			color:rgb(0,0,0);
+		}
+		#g-2023-4-months-xs .g-cstyle2 {
+			font-weight:bold;
+		}
+		#g-2023-4-months-sm {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2023-4-months-sm p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:17px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:14px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2023-4-months-sm .g-pstyle0 {
+			line-height:31px;
+			height:31px;
+			font-size:26px;
+		}
+		#g-2023-4-months-sm .g-pstyle1 {
+			height:17px;
+		}
+		#g-2023-4-months-sm .g-pstyle2 {
+			line-height:58px;
+			height:58px;
+			font-size:48px;
+			text-align:center;
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-sm .g-pstyle3 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:center;
+		}
+		#g-2023-4-months-sm .g-pstyle4 {
+			line-height:16px;
+			height:16px;
+			font-size:13px;
+		}
+		#g-2023-4-months-sm .g-pstyle5 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+		}
+		#g-2023-4-months-sm .g-pstyle6 {
+			line-height:9px;
+			height:9px;
+			font-size:8px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-sm .g-pstyle7 {
+			line-height:13px;
+			height:13px;
+			font-size:11px;
+		}
+		#g-2023-4-months-sm .g-pstyle8 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-sm .g-pstyle9 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-sm .g-pstyle10 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+		}
+		#g-2023-4-months-sm .g-pstyle11 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-sm .g-pstyle12 {
+			line-height:13px;
+			font-size:11px;
+			text-align:center;
+		}
+		#g-2023-4-months-sm .g-pstyle13 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:right;
+		}
+		#g-2023-4-months-sm .g-pstyle14 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+		}
+		#g-2023-4-months-sm .g-pstyle15 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-sm .g-pstyle16 {
+			line-height:10px;
+			height:10px;
+			letter-spacing:-0.013em;
+			font-size:8px;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-sm .g-pstyle17 {
+			line-height:11px;
+			height:11px;
+			font-size:10px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-sm .g-pstyle18 {
+			font-weight:500;
+			line-height:8px;
+			height:8px;
+			font-size:6px;
+		}
+		#g-2023-4-months-sm .g-pstyle19 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:right;
+		}
+		#g-2023-4-months-sm .g-cstyle0 {
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-sm .g-cstyle1 {
+			font-weight:bold;
+		}
+		#g-2023-4-months-md {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2023-4-months-md p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:14px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:12px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2023-4-months-md .g-pstyle0 {
+			line-height:31px;
+			height:31px;
+			font-size:26px;
+		}
+		#g-2023-4-months-md .g-pstyle1 {
+			height:14px;
+		}
+		#g-2023-4-months-md .g-pstyle2 {
+			line-height:17px;
+			height:17px;
+			font-size:14px;
+			text-align:right;
+		}
+		#g-2023-4-months-md .g-pstyle3 {
+			line-height:9px;
+			height:9px;
+			font-size:7px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-md .g-pstyle4 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+		}
+		#g-2023-4-months-md .g-pstyle5 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-md .g-pstyle6 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			color:rgb(255,255,255);
+		}
+		#g-2023-4-months-md .g-pstyle7 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+		}
+		#g-2023-4-months-md .g-pstyle8 {
+			line-height:10px;
+			font-size:8px;
+			text-align:center;
+		}
+		#g-2023-4-months-md .g-pstyle9 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:right;
+		}
+		#g-2023-4-months-md .g-pstyle10 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			text-align:center;
+		}
+		#g-2023-4-months-md .g-pstyle11 {
+			line-height:58px;
+			height:58px;
+			font-size:48px;
+			text-align:center;
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-md .g-pstyle12 {
+			height:14px;
+			text-align:center;
+		}
+		#g-2023-4-months-md .g-pstyle13 {
+			line-height:7px;
+			height:7px;
+			font-size:6px;
+		}
+		#g-2023-4-months-md .g-pstyle14 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+			color:rgb(123,123,123);
+		}
+		#g-2023-4-months-md .g-pstyle15 {
+			font-weight:500;
+			line-height:7px;
+			height:7px;
+			font-size:6px;
+		}
+		#g-2023-4-months-md .g-pstyle16 {
+			height:14px;
+			text-align:right;
+		}
+		#g-2023-4-months-md .g-cstyle0 {
+			color:rgb(193,39,45);
+		}
+		#g-2023-4-months-md .g-cstyle1 {
+			font-weight:bold;
+		}
+
+	</style>
+
+	<div id="g-2023-4-months-box" class="ai2html ai2html-responsive">
+
+		<!-- Artboard: lg -->
+		<div id="g-2023-4-months-lg" class="g-artboard" style="width:930px; height:565.314163328107px;" data-aspect-ratio="1.645" data-min-width="930">
+	<div style=""></div>
+			<img id="g-2023-4-months-lg-img" class="g-4-months-lg-img g-aiImg" alt="" src="ai2html/images/2023-4-months-lg.png"/>
+			<div id="g-ai0-1" class="g-lg g-aiAbs g-aiPointText" style="top:3.8676%;margin-top:-24.9px;left:6.6704%;width:380px;">
+				<p class="g-pstyle0">Widespread disasters</p>
+			</div>
+			<div id="g-ai0-2" class="g-lg g-aiAbs g-aiPointText" style="top:11.4886%;margin-top:-20.9px;left:6.6936%;width:690px;">
+				<p class="g-pstyle1">In the first four months of 2023, at least <span class="g-cstyle0">33 states/UTs </span>reported extreme weather events. </p>
+				<p class="g-pstyle1"><span class="g-cstyle0">North west</span> remained the <span class="g-cstyle0">worst affected region</span> owing to series of hailstorms </p>
+			</div>
+			<div id="g-ai0-3" class="g-lg g-aiAbs g-aiPointText" style="top:18.8151%;margin-top:-6.4px;left:7.2263%;width:54px;">
+				<p class="g-pstyle2">Region</p>
+			</div>
+			<div id="g-ai0-4" class="g-lg g-aiAbs g-aiPointText" style="top:25.462%;margin-top:-26.9px;right:5.7972%;width:149px;">
+				<p class="g-pstyle3">Days with extreme </p>
+				<p class="g-pstyle3">weather events </p>
+				<p class="g-pstyle3">(Jan-April 2023)</p>
+			</div>
+			<div id="g-ai0-5" class="g-lg g-aiAbs g-aiPointText" style="top:22.9207%;margin-top:-7.6px;left:29.6095%;width:88px;">
+				<p class="g-pstyle4">Chhattisgarh</p>
+			</div>
+			<div id="g-ai0-6" class="g-lg g-aiAbs g-aiPointText" style="top:25.1717%;margin-top:-7.3px;left:31.8847%;width:34px;">
+				<p class="g-pstyle4">15</p>
+			</div>
+			<div id="g-ai0-7" class="g-lg g-aiAbs g-aiPointText" style="top:27.2352%;margin-top:-14px;left:53.4064%;margin-left:-32.5px;width:65px;">
+				<p class="g-pstyle5">Madhya </p>
+				<p class="g-pstyle5">Pradesh</p>
+			</div>
+			<div id="g-ai0-8" class="g-lg g-aiAbs g-aiPointText" style="top:26.2816%;margin-top:-7.6px;left:18.5431%;width:59px;">
+				<p class="g-pstyle4">Gujarat</p>
+			</div>
+			<div id="g-ai0-9" class="g-lg g-aiAbs g-aiPointText" style="top:26.6354%;margin-top:-7.6px;left:14.3101%;width:43px;">
+				<p class="g-pstyle4">Goa</p>
+			</div>
+			<div id="g-ai0-10" class="g-lg g-aiAbs g-aiPointText" style="top:26.8123%;margin-top:-7.6px;left:44.4514%;width:58px;">
+				<p class="g-pstyle6">Odisha</p>
+			</div>
+			<div id="g-ai0-11" class="g-lg g-aiAbs g-aiPointText" style="top:27.4488%;margin-top:-7.2px;left:2.9745%;width:56px;">
+				<p class="g-pstyle7">Central</p>
+			</div>
+			<div id="g-ai0-12" class="g-lg g-aiAbs g-aiPointText" style="top:27.8026%;margin-top:-7.2px;left:56.9242%;width:81px;">
+				<p class="g-pstyle8">Maharashtra</p>
+			</div>
+			<div id="g-ai0-13" class="g-lg g-aiAbs g-aiPointText" style="top:28.5327%;margin-top:-7.3px;left:15.1164%;width:28px;">
+				<p class="g-pstyle4">5</p>
+			</div>
+			<div id="g-ai0-14" class="g-lg g-aiAbs g-aiPointText" style="top:28.5326%;margin-top:-7.3px;left:20.3339%;width:28px;">
+				<p class="g-pstyle4">8</p>
+			</div>
+			<div id="g-ai0-15" class="g-lg g-aiAbs g-aiPointText" style="top:28.8864%;margin-top:-7.3px;left:45.6434%;width:34px;">
+				<p class="g-pstyle6">23</p>
+			</div>
+			<div id="g-ai0-16" class="g-lg g-aiAbs g-aiPointText" style="top:29.7709%;margin-top:-7.3px;left:59.5762%;width:34px;">
+				<p class="g-pstyle6">31</p>
+			</div>
+			<div id="g-ai0-17" class="g-lg g-aiAbs g-aiPointText" style="top:30.6554%;margin-top:-7.3px;left:52.5733%;width:34px;">
+				<p class="g-pstyle6">27</p>
+			</div>
+			<div id="g-ai0-18" class="g-lg g-aiAbs" style="top:38.7395%;left:11.7831%;margin-left:-4.9462%;width:9.8925%;">
+				<p class="g-pstyle9">Northeastern states</p>
+			</div>
+			<div id="g-ai0-19" class="g-lg g-aiAbs g-aiPointText" style="top:42.7327%;margin-top:-7.6px;left:20.3339%;width:76px;">
+				<p class="g-pstyle4">Jharkhand</p>
+			</div>
+			<div id="g-ai0-20" class="g-lg g-aiAbs g-aiPointText" style="top:43.6365%;margin-top:-5.7px;left:76.3481%;width:41px;">
+				<p class="g-pstyle10">1 day</p>
+			</div>
+			<div id="g-ai0-21" class="g-lg g-aiAbs g-aiPointText" style="top:43.6365%;margin-top:-5.7px;left:82.0893%;width:50px;">
+				<p class="g-pstyle10">15 days</p>
+			</div>
+			<div id="g-ai0-22" class="g-lg g-aiAbs g-aiPointText" style="top:43.6365%;margin-top:-5.7px;left:90.3%;width:50px;">
+				<p class="g-pstyle10">31 days</p>
+			</div>
+			<div id="g-ai0-23" class="g-lg g-aiAbs g-aiPointText" style="top:45.9858%;margin-top:-14px;left:49.1132%;margin-left:-29px;width:58px;">
+				<p class="g-pstyle5">West </p>
+				<p class="g-pstyle5">Bengal</p>
+			</div>
+			<div id="g-ai0-24" class="g-lg g-aiAbs g-aiPointText" style="top:44.9837%;margin-top:-7.3px;left:22.0005%;width:34px;">
+				<p class="g-pstyle4">10</p>
+			</div>
+			<div id="g-ai0-25" class="g-lg g-aiAbs g-aiPointText" style="top:45.386%;margin-top:-7.6px;left:25.4068%;width:56px;">
+				<p class="g-pstyle4">Sikkim</p>
+			</div>
+			<div id="g-ai0-26" class="g-lg g-aiAbs g-aiPointText" style="top:46.3763%;margin-top:-13.2px;right:93.2111%;width:73px;">
+				<p class="g-pstyle11">East and </p>
+				<p class="g-pstyle11">North East</p>
+			</div>
+			<div id="g-ai0-27" class="g-lg g-aiAbs g-aiPointText" style="top:45.5629%;margin-top:-7.6px;left:15.4202%;width:57px;">
+				<p class="g-pstyle4">Assam</p>
+			</div>
+			<div id="g-ai0-28" class="g-lg g-aiAbs g-aiPointText" style="top:46.2705%;margin-top:-7.6px;left:54.3008%;width:49px;">
+				<p class="g-pstyle6">Bihar</p>
+			</div>
+			<div id="g-ai0-29" class="g-lg g-aiAbs g-aiPointText" style="top:46.9295%;margin-top:-7.3px;left:26.3375%;width:33px;">
+				<p class="g-pstyle4">11</p>
+			</div>
+			<div id="g-ai0-30" class="g-lg g-aiAbs g-aiPointText" style="top:47.4602%;margin-top:-7.3px;left:16.8539%;width:28px;">
+				<p class="g-pstyle4">6</p>
+			</div>
+			<div id="g-ai0-31" class="g-lg g-aiAbs g-aiPointText" style="top:48.5216%;margin-top:-7.3px;left:54.9486%;width:34px;">
+				<p class="g-pstyle6">28</p>
+			</div>
+			<div id="g-ai0-32" class="g-lg g-aiAbs g-aiPointText" style="top:49.406%;margin-top:-7.3px;left:48.3425%;width:34px;">
+				<p class="g-pstyle6">25</p>
+			</div>
+			<div id="g-ai0-33" class="g-lg g-aiAbs g-aiPointText" style="top:65.4082%;margin-top:-63.8px;left:87.3912%;margin-left:-87.5px;width:175px;">
+				<p class="g-pstyle12">11</p>
+				<p class="g-pstyle13">States/Union Territories </p>
+				<p class="g-pstyle13">recorded extreme weather </p>
+				<p class="g-pstyle13">events on 20 days </p>
+				<p class="g-pstyle13">or more in the first </p>
+				<p class="g-pstyle13">120 days of 2023</p>
+			</div>
+			<div id="g-ai0-34" class="g-lg g-aiAbs g-aiPointText" style="top:58.0145%;margin-top:-14px;left:58.0049%;margin-left:-32px;width:64px;">
+				<p class="g-pstyle5">Uttar </p>
+				<p class="g-pstyle5">Pradesh</p>
+			</div>
+			<div id="g-ai0-35" class="g-lg g-aiAbs g-aiPointText" style="top:60.1372%;margin-top:-14px;left:25.2176%;margin-left:-35px;width:70px;">
+				<p class="g-pstyle14">Jammu &</p>
+				<p class="g-pstyle14">Kashmir</p>
+			</div>
+			<div id="g-ai0-36" class="g-lg g-aiAbs g-aiPointText" style="top:61.1295%;margin-top:-7.6px;left:49.6897%;width:58px;">
+				<p class="g-pstyle6">Punjab</p>
+			</div>
+			<div id="g-ai0-37" class="g-lg g-aiAbs g-aiPointText" style="top:61.1295%;margin-top:-7.6px;left:15.289%;width:81px;">
+				<p class="g-pstyle4">Chandigarh</p>
+			</div>
+			<div id="g-ai0-38" class="g-lg g-aiAbs g-aiPointText" style="top:61.4347%;margin-top:-7.3px;left:57.1752%;width:34px;">
+				<p class="g-pstyle6">29</p>
+			</div>
+			<div id="g-ai0-39" class="g-lg g-aiAbs g-aiPointText" style="top:62.8984%;margin-top:-7.6px;left:42.9485%;width:64px;">
+				<p class="g-pstyle6">Haryana</p>
+			</div>
+			<div id="g-ai0-40" class="g-lg g-aiAbs g-aiPointText" style="top:63.2037%;margin-top:-7.3px;left:50.8294%;width:34px;">
+				<p class="g-pstyle6">26</p>
+			</div>
+			<div id="g-ai0-41" class="g-lg g-aiAbs g-aiPointText" style="top:63.2522%;margin-top:-7.6px;left:10.266%;width:59px;">
+				<p class="g-pstyle4">Ladakh</p>
+			</div>
+			<div id="g-ai0-42" class="g-lg g-aiAbs g-aiPointText" style="top:63.7344%;margin-top:-7.3px;left:24.9516%;width:33px;">
+				<p class="g-pstyle4">11</p>
+			</div>
+			<div id="g-ai0-43" class="g-lg g-aiAbs g-aiPointText" style="top:64.6188%;margin-top:-7.3px;left:20.0436%;width:34px;">
+				<p class="g-pstyle4">10</p>
+			</div>
+			<div id="g-ai0-44" class="g-lg g-aiAbs g-aiPointText" style="top:65.0211%;margin-top:-7.6px;left:28.6896%;width:48px;">
+				<p class="g-pstyle4">Delhi</p>
+			</div>
+			<div id="g-ai0-45" class="g-lg g-aiAbs g-aiPointText" style="top:65.1495%;margin-top:-7.3px;left:44.5846%;width:34px;">
+				<p class="g-pstyle6">25</p>
+			</div>
+			<div id="g-ai0-46" class="g-lg g-aiAbs g-aiPointText" style="top:65.127%;margin-top:-7.2px;left:1.0351%;width:75px;">
+				<p class="g-pstyle7">North West</p>
+			</div>
+			<div id="g-ai0-47" class="g-lg g-aiAbs g-aiPointText" style="top:65.3264%;margin-top:-7.3px;left:13.273%;width:28px;">
+				<p class="g-pstyle4">4</p>
+			</div>
+			<div id="g-ai0-48" class="g-lg g-aiAbs g-aiPointText" style="top:66.9184%;margin-top:-7.3px;left:29.3202%;width:34px;">
+				<p class="g-pstyle4">12</p>
+			</div>
+			<div id="g-ai0-49" class="g-lg g-aiAbs g-aiPointText" style="top:68.9819%;margin-top:-14px;left:55.6242%;margin-left:-36px;width:72px;">
+				<p class="g-pstyle5">Himachal </p>
+				<p class="g-pstyle5">Pradesh</p>
+			</div>
+			<div id="g-ai0-50" class="g-lg g-aiAbs g-aiPointText" style="top:68.0283%;margin-top:-7.6px;left:59.5974%;width:73px;">
+				<p class="g-pstyle6">Rajasthan</p>
+			</div>
+			<div id="g-ai0-51" class="g-lg g-aiAbs g-aiPointText" style="top:70.1025%;margin-top:-7.3px;left:61.8741%;width:34px;">
+				<p class="g-pstyle6">31</p>
+			</div>
+			<div id="g-ai0-52" class="g-lg g-aiAbs g-aiPointText" style="top:72.0483%;margin-top:-7.3px;left:55.1367%;width:34px;">
+				<p class="g-pstyle6">28</p>
+			</div>
+			<div id="g-ai0-53" class="g-lg g-aiAbs g-aiPointText" style="top:73.6403%;margin-top:-7.3px;left:48.297%;width:34px;">
+				<p class="g-pstyle6">25</p>
+			</div>
+			<div id="g-ai0-54" class="g-lg g-aiAbs g-aiPointText" style="top:78.8879%;margin-top:-14px;left:23.3819%;margin-left:-32px;width:64px;">
+				<p class="g-pstyle14">Andhra </p>
+				<p class="g-pstyle14">Pradesh</p>
+			</div>
+			<div id="g-ai0-55" class="g-lg g-aiAbs g-aiPointText" style="top:78.1112%;margin-top:-7.6px;left:46.1437%;width:84px;">
+				<p class="g-pstyle4">Uttarakhand</p>
+			</div>
+			<div id="g-ai0-56" class="g-lg g-aiAbs g-aiPointText" style="top:79.7032%;margin-top:-7.6px;left:26.3375%;width:74px;">
+				<p class="g-pstyle4">Karnataka</p>
+			</div>
+			<div id="g-ai0-57" class="g-lg g-aiAbs g-aiPointText" style="top:81.6491%;margin-top:-7.6px;left:11.0966%;width:81px;">
+				<p class="g-pstyle4">Puducherry</p>
+			</div>
+			<div id="g-ai0-58" class="g-lg g-aiAbs g-aiPointText" style="top:82.6619%;margin-top:-7.3px;left:22.4761%;width:34px;">
+				<p class="g-pstyle4">10</p>
+			</div>
+			<div id="g-ai0-59" class="g-lg g-aiAbs g-aiPointText" style="top:82.7104%;margin-top:-7.6px;left:7.2313%;width:55px;">
+				<p class="g-pstyle4">Kerala</p>
+			</div>
+			<div id="g-ai0-60" class="g-lg g-aiAbs g-aiPointText" style="top:83.8776%;margin-top:-13.2px;right:93.41%;width:69px;">
+				<p class="g-pstyle11">South</p>
+				<p class="g-pstyle11">Peninsula</p>
+			</div>
+			<div id="g-ai0-61" class="g-lg g-aiAbs g-aiPointText" style="top:82.8388%;margin-top:-7.3px;left:26.8084%;width:33px;">
+				<p class="g-pstyle4">11</p>
+			</div>
+			<div id="g-ai0-62" class="g-lg g-aiAbs g-aiPointText" style="top:82.8873%;margin-top:-7.6px;left:30.5617%;width:74px;">
+				<p class="g-pstyle4">Telangana</p>
+			</div>
+			<div id="g-ai0-63" class="g-lg g-aiAbs g-aiPointText" style="top:84.016%;margin-top:-12px;left:19.5131%;margin-left:-23.5px;width:47px;">
+				<p class="g-pstyle15">Tamil </p>
+				<p class="g-pstyle15">Nadu</p>
+			</div>
+			<div id="g-ai0-64" class="g-lg g-aiAbs g-aiPointText" style="top:83.7232%;margin-top:-7.3px;left:11.7215%;width:28px;">
+				<p class="g-pstyle4">3</p>
+			</div>
+			<div id="g-ai0-65" class="g-lg g-aiAbs g-aiPointText" style="top:84.2539%;margin-top:-7.3px;left:8.2962%;width:28px;">
+				<p class="g-pstyle4">1</p>
+			</div>
+			<div id="g-ai0-66" class="g-lg g-aiAbs g-aiPointText" style="top:85.1384%;margin-top:-7.3px;left:32.1368%;width:34px;">
+				<p class="g-pstyle4">15</p>
+			</div>
+			<div id="g-ai0-67" class="g-lg g-aiAbs g-aiPointText" style="top:86.4445%;margin-top:-5.7px;left:19.2407%;width:26px;">
+				<p class="g-pstyle10">8</p>
+			</div>
+			<div id="g-ai0-68" class="g-lg g-aiAbs g-aiPointText" style="top:90.9755%;margin-top:-15.3px;right:5.0166%;width:294px;">
+				<p class="g-pstyle16"><span class="g-cstyle1">Source: </span>India&rsquo;s Atlas on Extreme Weather Events, </p>
+				<p class="g-pstyle16">Centre for Science and Environment</p>
+			</div>
+			<div id="g-ai0-69" class="g-lg g-aiAbs g-aiPointText" style="top:91.8772%;margin-top:-8.4px;left:21.8155%;width:310px;">
+				<p class="g-pstyle17">Days with extreme weather events (Jan-April 2023)</p>
+			</div>
+			<div id="g-ai0-70" class="g-lg g-aiAbs g-aiPointText" style="top:95.3989%;margin-top:-6.3px;left:6.6491%;width:26px;">
+				<p class="g-pstyle18">0</p>
+			</div>
+			<div id="g-ai0-71" class="g-lg g-aiAbs g-aiPointText" style="top:95.3989%;margin-top:-6.3px;left:32.1368%;width:31px;">
+				<p class="g-pstyle18">15</p>
+			</div>
+			<div id="g-ai0-72" class="g-lg g-aiAbs g-aiPointText" style="top:95.3989%;margin-top:-6.3px;left:57.8613%;width:31px;">
+				<p class="g-pstyle18">30</p>
+			</div>
+		</div>
+
+		<!-- Artboard: xs -->
+		<div id="g-2023-4-months-xs" class="g-artboard" style="max-width: 330px;max-height: 620px" data-aspect-ratio="0.532" data-min-width="0" data-max-width="509">
+	<div style="padding: 0 0 187.8788% 0;"></div>
+			<img id="g-2023-4-months-xs-img" class="g-4-months-xs-img g-aiImg" alt="" src="ai2html/images/2023-4-months-xs.png"/>
+			<div id="g-ai1-1" class="g-sm g-aiAbs g-aiPointText" style="top:4.443%;margin-top:-18.5px;left:4.4851%;width:291px;">
+				<p class="g-pstyle0">Widespread disasters</p>
+			</div>
+			<div id="g-ai1-2" class="g-sm g-aiAbs g-aiPointText" style="top:12.7969%;margin-top:-35.3px;left:3.6077%;width:338px;">
+				<p class="g-pstyle1">In the first four months of 2023, at least </p>
+				<p class="g-pstyle1"><span class="g-cstyle0">33 states/UTs </span>reported extreme weather events.</p>
+				<p class="g-pstyle2">North west<span class="g-cstyle1"> remained the </span>worst affected </p>
+				<p class="g-pstyle1"><span class="g-cstyle0">region</span> owing to series of hailstorms </p>
+			</div>
+			<div id="g-ai1-3" class="g-sm g-aiAbs g-aiPointText" style="top:22.9322%;margin-top:-18.2px;left:3.8963%;width:195px;">
+				<p class="g-pstyle1">Days with extreme weather </p>
+				<p class="g-pstyle1">events (Jan-April 2023)</p>
+			</div>
+			<div id="g-ai1-4" class="g-sm g-aiAbs g-aiPointText" style="top:36.0997%;margin-top:-63.8px;left:70.9687%;margin-left:-87.5px;width:175px;">
+				<p class="g-pstyle3">11</p>
+				<p class="g-pstyle4">States/Union Territories </p>
+				<p class="g-pstyle4">recorded extreme weather </p>
+				<p class="g-pstyle4">events on 20 days </p>
+				<p class="g-pstyle4">or more in the first </p>
+				<p class="g-pstyle4">120 days of 2023</p>
+			</div>
+			<div id="g-ai1-5" class="g-sm g-aiAbs g-aiPointText" style="top:30.2715%;margin-top:-5.7px;left:12.9368%;width:41px;">
+				<p class="g-pstyle5">1 day</p>
+			</div>
+			<div id="g-ai1-6" class="g-sm g-aiAbs g-aiPointText" style="top:37.5295%;margin-top:-5.7px;left:12.3019%;width:50px;">
+				<p class="g-pstyle5">15 days</p>
+			</div>
+			<div id="g-ai1-7" class="g-sm g-aiAbs g-aiPointText" style="top:48.4973%;margin-top:-5.7px;left:11.2647%;width:50px;">
+				<p class="g-pstyle5">31 days</p>
+			</div>
+			<div id="g-ai1-8" class="g-xs g-aiAbs g-aiPointText" style="top:53.9609%;margin-top:-3.6px;left:12.1404%;width:39px;">
+				<p class="g-pstyle6">Region</p>
+			</div>
+			<div id="g-ai1-9" class="g-xs g-aiAbs g-aiPointText" style="top:55.189%;margin-top:-7.2px;left:65.2835%;width:56px;">
+				<p class="g-pstyle7">Odisha</p>
+			</div>
+			<div id="g-ai1-10" class="g-xs g-aiAbs g-aiPointText" style="top:55.3503%;margin-top:-7.2px;left:41.2939%;width:84px;">
+				<p class="g-pstyle7">Chhattisgarh</p>
+			</div>
+			<div id="g-ai1-11" class="g-xs g-aiAbs g-aiPointText" style="top:55.8342%;margin-top:-7.2px;left:27.8928%;width:57px;">
+				<p class="g-pstyle7">Gujarat</p>
+			</div>
+			<div id="g-ai1-12" class="g-xs g-aiAbs g-aiPointText" style="top:56.318%;margin-top:-7.2px;left:21.3092%;width:41px;">
+				<p class="g-pstyle7">Goa</p>
+			</div>
+			<div id="g-ai1-13" class="g-xs g-aiAbs g-aiPointText" style="top:56.9632%;margin-top:-7.2px;left:89.9636%;margin-left:-24px;width:48px;">
+				<p class="g-pstyle8">Maha</p>
+			</div>
+			<div id="g-ai1-14" class="g-xs g-aiAbs g-aiPointText" style="top:56.9632%;margin-top:-7.2px;left:79.7983%;margin-left:-18.5px;width:37px;">
+				<p class="g-pstyle8">MP</p>
+			</div>
+			<div id="g-ai1-15" class="g-xs g-aiAbs g-aiPointText" style="top:57.0829%;margin-top:-6.9px;left:68.107%;width:33px;">
+				<p class="g-pstyle9">23</p>
+			</div>
+			<div id="g-ai1-16" class="g-xs g-aiAbs g-aiPointText" style="top:57.8894%;margin-top:-6.9px;left:47.7045%;width:33px;">
+				<p class="g-pstyle7">15</p>
+			</div>
+			<div id="g-ai1-17" class="g-xs g-aiAbs g-aiPointText" style="top:58.0507%;margin-top:-6.9px;left:30.899%;width:28px;">
+				<p class="g-pstyle7">8</p>
+			</div>
+			<div id="g-ai1-18" class="g-xs g-aiAbs g-aiPointText" style="top:58.0507%;margin-top:-6.9px;left:23.2438%;width:28px;">
+				<p class="g-pstyle7">5</p>
+			</div>
+			<div id="g-ai1-19" class="g-xs g-aiAbs g-aiPointText" style="top:58.0544%;margin-top:-5.9px;left:2.442%;width:50px;">
+				<p class="g-pstyle5">Central</p>
+			</div>
+			<div id="g-ai1-20" class="g-xs g-aiAbs g-aiPointText" style="top:59.1798%;margin-top:-6.9px;left:78.5776%;width:33px;">
+				<p class="g-pstyle9">27</p>
+			</div>
+			<div id="g-ai1-21" class="g-xs g-aiAbs g-aiPointText" style="top:59.1797%;margin-top:-6.9px;left:87.8847%;width:35px;">
+				<p class="g-pstyle9">31</p>
+			</div>
+			<div id="g-ai1-22" class="g-xs g-aiAbs" style="top:61.6129%;left:21.8708%;margin-left:-10.303%;width:20.6061%;">
+				<p class="g-pstyle10">Northeastern states</p>
+			</div>
+			<div id="g-ai1-23" class="g-xs g-aiAbs g-aiPointText" style="top:63.7374%;margin-top:-7.2px;left:72.6068%;margin-left:-41px;width:82px;">
+				<p class="g-pstyle11">West Bengal</p>
+			</div>
+			<div id="g-ai1-24" class="g-xs g-aiAbs g-aiPointText" style="top:64.5439%;margin-top:-7.2px;left:28.7311%;width:73px;">
+				<p class="g-pstyle7">Jharkhand</p>
+			</div>
+			<div id="g-ai1-25" class="g-xs g-aiAbs g-aiPointText" style="top:66.4378%;margin-top:-6.9px;left:71.965%;width:32px;">
+				<p class="g-pstyle9">25</p>
+			</div>
+			<div id="g-ai1-26" class="g-xs g-aiAbs g-aiPointText" style="top:67.2157%;margin-top:-10.7px;right:88.6748%;width:47px;">
+				<p class="g-pstyle12">East &</p>
+				<p class="g-pstyle12">N-East</p>
+			</div>
+			<div id="g-ai1-27" class="g-xs g-aiAbs g-aiPointText" style="top:66.8019%;margin-top:-7.2px;left:79.6834%;width:48px;">
+				<p class="g-pstyle9">Bihar</p>
+			</div>
+			<div id="g-ai1-28" class="g-xs g-aiAbs g-aiPointText" style="top:67.083%;margin-top:-6.9px;left:33.0049%;width:33px;">
+				<p class="g-pstyle7">10</p>
+			</div>
+			<div id="g-ai1-29" class="g-xs g-aiAbs g-aiPointText" style="top:67.4055%;margin-top:-6.9px;left:39.7346%;width:32px;">
+				<p class="g-pstyle7">11</p>
+			</div>
+			<div id="g-ai1-30" class="g-xs g-aiAbs g-aiPointText" style="top:68.3732%;margin-top:-6.9px;left:81.6155%;width:33px;">
+				<p class="g-pstyle9">28</p>
+			</div>
+			<div id="g-ai1-31" class="g-xs g-aiAbs g-aiPointText" style="top:69.5439%;margin-top:-7.2px;left:37.09%;width:54px;">
+				<p class="g-pstyle7">Sikkim</p>
+			</div>
+			<div id="g-ai1-32" class="g-xs g-aiAbs g-aiPointText" style="top:70.9955%;margin-top:-7.2px;left:72.5809%;width:55px;">
+				<p class="g-pstyle7">Punjab</p>
+			</div>
+			<div id="g-ai1-33" class="g-xs g-aiAbs g-aiPointText" style="top:71.8019%;margin-top:-7.2px;left:59.0724%;width:61px;">
+				<p class="g-pstyle7">Haryana</p>
+			</div>
+			<div id="g-ai1-34" class="g-xs g-aiAbs g-aiPointText" style="top:71.9632%;margin-top:-7.2px;left:86.8931%;margin-left:-18px;width:36px;">
+				<p class="g-pstyle8">UP</p>
+			</div>
+			<div id="g-ai1-35" class="g-xs g-aiAbs g-aiPointText" style="top:73.0507%;margin-top:-6.9px;left:75.4053%;width:33px;">
+				<p class="g-pstyle9">26</p>
+			</div>
+			<div id="g-ai1-36" class="g-xs g-aiAbs g-aiPointText" style="top:73.7374%;margin-top:-7.2px;left:42.8891%;width:46px;">
+				<p class="g-pstyle7">Delhi</p>
+			</div>
+			<div id="g-ai1-37" class="g-xs g-aiAbs g-aiPointText" style="top:73.8572%;margin-top:-6.9px;left:85.1866%;width:33px;">
+				<p class="g-pstyle9">29</p>
+			</div>
+			<div id="g-ai1-38" class="g-xs g-aiAbs g-aiPointText" style="top:73.8571%;margin-top:-6.9px;left:66.1485%;width:33px;">
+				<p class="g-pstyle9">25</p>
+			</div>
+			<div id="g-ai1-39" class="g-xs g-aiAbs g-aiPointText" style="top:75.7964%;margin-top:-5.9px;left:2.442%;width:49px;">
+				<p class="g-pstyle5">N-West</p>
+			</div>
+			<div id="g-ai1-40" class="g-xs g-aiAbs g-aiPointText" style="top:76.2765%;margin-top:-6.9px;left:43.72%;width:33px;">
+				<p class="g-pstyle7">12</p>
+			</div>
+			<div id="g-ai1-41" class="g-xs g-aiAbs g-aiPointText" style="top:76.6406%;margin-top:-7.2px;left:90.4725%;width:38px;">
+				<p class="g-pstyle9">Raj</p>
+			</div>
+			<div id="g-ai1-42" class="g-xs g-aiAbs g-aiPointText" style="top:77.1245%;margin-top:-7.2px;left:83.5273%;margin-left:-18px;width:36px;">
+				<p class="g-pstyle8">HP</p>
+			</div>
+			<div id="g-ai1-43" class="g-xs g-aiAbs g-aiPointText" style="top:78.2119%;margin-top:-6.9px;left:91.6716%;width:33px;">
+				<p class="g-pstyle9">31</p>
+			</div>
+			<div id="g-ai1-44" class="g-xs g-aiAbs g-aiPointText" style="top:79.3411%;margin-top:-6.9px;left:81.6273%;width:33px;">
+				<p class="g-pstyle9">28</p>
+			</div>
+			<div id="g-ai1-45" class="g-xs g-aiAbs g-aiPointText" style="top:79.8249%;margin-top:-6.9px;left:72.1987%;width:33px;">
+				<p class="g-pstyle9">25</p>
+			</div>
+			<div id="g-ai1-46" class="g-xs g-aiAbs g-aiPointText" style="top:81.8019%;margin-top:-7.2px;left:67.7376%;width:80px;">
+				<p class="g-pstyle7">Uttarakhand</p>
+			</div>
+			<div id="g-ai1-47" class="g-xs g-aiAbs g-aiPointText" style="top:82.6084%;margin-top:-7.2px;left:28.9972%;width:70px;">
+				<p class="g-pstyle7">Karnataka</p>
+			</div>
+			<div id="g-ai1-48" class="g-xs g-aiAbs g-aiPointText" style="top:82.6084%;margin-top:-7.2px;left:46.9295%;width:71px;">
+				<p class="g-pstyle7">Telangana</p>
+			</div>
+			<div id="g-ai1-49" class="g-xs g-aiAbs g-aiPointText" style="top:84.4738%;margin-top:-10.7px;right:88.2963%;width:60px;">
+				<p class="g-pstyle12">South </p>
+				<p class="g-pstyle12">Peninsula</p>
+			</div>
+			<div id="g-ai1-50" class="g-xs g-aiAbs g-aiPointText" style="top:84.9862%;margin-top:-6.9px;left:40.6288%;width:32px;">
+				<p class="g-pstyle7">11</p>
+			</div>
+			<div id="g-ai1-51" class="g-xs g-aiAbs g-aiPointText" style="top:85.3087%;margin-top:-6.9px;left:48.0319%;width:33px;">
+				<p class="g-pstyle7">15</p>
+			</div>
+			<div id="g-ai1-52" class="g-xs g-aiAbs g-aiPointText" style="top:88.5383%;margin-top:-5.9px;left:33.579%;width:215px;">
+				<p class="g-pstyle13">Days with extreme weather events (Jan-April 2023)</p>
+			</div>
+			<div id="g-ai1-53" class="g-xs g-aiAbs g-aiPointText" style="top:90.3653%;margin-top:-3.3px;left:11.292%;width:24px;">
+				<p class="g-pstyle14">0</p>
+			</div>
+			<div id="g-ai1-54" class="g-xs g-aiAbs g-aiPointText" style="top:90.3653%;margin-top:-3.3px;left:48.7462%;width:27px;">
+				<p class="g-pstyle14">15</p>
+			</div>
+			<div id="g-ai1-55" class="g-xs g-aiAbs g-aiPointText" style="top:90.3653%;margin-top:-3.3px;left:86.5481%;width:27px;">
+				<p class="g-pstyle14">30</p>
+			</div>
+			<div id="g-ai1-56" class="g-sm g-aiAbs g-aiPointText" style="top:94.7254%;margin-top:-15.3px;right:1.7583%;width:294px;">
+				<p class="g-pstyle15"><span class="g-cstyle2">Source: </span>India&rsquo;s Atlas on Extreme Weather Events, </p>
+				<p class="g-pstyle15">Centre for Science and Environment</p>
+			</div>
+		</div>
+
+		<!-- Artboard: sm -->
+		<div id="g-2023-4-months-sm" class="g-artboard" style="width:510px; height:682.299056594781px;" data-aspect-ratio="0.747" data-min-width="510" data-max-width="659">
+	<div style=""></div>
+			<img id="g-2023-4-months-sm-img" class="g-4-months-sm-img g-aiImg" alt="" src="ai2html/images/2023-4-months-sm.png"/>
+			<div id="g-ai2-1" class="g-sm g-aiAbs g-aiPointText" style="top:6.8221%;margin-top:-18.5px;left:7.889%;width:291px;">
+				<p class="g-pstyle0">Widespread disasters</p>
+			</div>
+			<div id="g-ai2-2" class="g-sm g-aiAbs g-aiPointText" style="top:13.182%;margin-top:-26.9px;left:7.3213%;width:455px;">
+				<p class="g-pstyle1">In the first four months of 2023, at least <span class="g-cstyle0">33 states/UTs </span>reported </p>
+				<p class="g-pstyle1">extreme weather events. <span class="g-cstyle0">North west</span> remained the <span class="g-cstyle0">worst affected </span></p>
+				<p class="g-pstyle1"><span class="g-cstyle0">region</span> owing to series of hailstorms </p>
+			</div>
+			<div id="g-ai2-3" class="g-sm g-aiAbs g-aiPointText" style="top:27.519%;margin-top:-63.8px;left:77.92%;margin-left:-87.5px;width:175px;">
+				<p class="g-pstyle2">11</p>
+				<p class="g-pstyle3">States/Union Territories </p>
+				<p class="g-pstyle3">recorded extreme weather </p>
+				<p class="g-pstyle3">events on 20 days </p>
+				<p class="g-pstyle3">or more in the first </p>
+				<p class="g-pstyle3">120 days of 2023</p>
+			</div>
+			<div id="g-ai2-4" class="g-sm g-aiAbs g-aiPointText" style="top:26.6729%;margin-top:-17px;left:8.0631%;width:224px;">
+				<p class="g-pstyle4">Days with extreme weather events </p>
+				<p class="g-pstyle4">(Jan-April 2023)</p>
+			</div>
+			<div id="g-ai2-5" class="g-sm g-aiAbs g-aiPointText" style="top:36.8875%;margin-top:-5.7px;left:8.7225%;width:41px;">
+				<p class="g-pstyle5">1 day</p>
+			</div>
+			<div id="g-ai2-6" class="g-sm g-aiAbs g-aiPointText" style="top:36.8875%;margin-top:-5.7px;left:19.1919%;width:50px;">
+				<p class="g-pstyle5">15 days</p>
+			</div>
+			<div id="g-ai2-7" class="g-sm g-aiAbs g-aiPointText" style="top:36.8875%;margin-top:-5.7px;left:34.1643%;width:50px;">
+				<p class="g-pstyle5">31 days</p>
+			</div>
+			<div id="g-ai2-8" class="g-sm g-aiAbs g-aiPointText" style="top:41.7983%;margin-top:-5.2px;left:11.4732%;width:48px;">
+				<p class="g-pstyle6">Region</p>
+			</div>
+			<div id="g-ai2-9" class="g-sm g-aiAbs g-aiPointText" style="top:46.1365%;margin-top:-7.8px;left:28.3572%;width:61px;">
+				<p class="g-pstyle7">Gujarat</p>
+			</div>
+			<div id="g-ai2-10" class="g-sm g-aiAbs g-aiPointText" style="top:47.072%;margin-top:-13.2px;left:78.7873%;margin-left:-31px;width:62px;">
+				<p class="g-pstyle8">Madhya </p>
+				<p class="g-pstyle8">Pradesh</p>
+			</div>
+			<div id="g-ai2-11" class="g-sm g-aiAbs g-aiPointText" style="top:46.4296%;margin-top:-7.8px;left:21.4496%;width:43px;">
+				<p class="g-pstyle7">Goa</p>
+			</div>
+			<div id="g-ai2-12" class="g-sm g-aiAbs g-aiPointText" style="top:46.7445%;margin-top:-5.9px;left:88.5487%;margin-left:-35px;width:70px;">
+				<p class="g-pstyle9">Maharashtra</p>
+			</div>
+			<div id="g-ai2-13" class="g-sm g-aiAbs g-aiPointText" style="top:47.072%;margin-top:-7.2px;left:42.9633%;width:84px;">
+				<p class="g-pstyle10">Chhattisgarh</p>
+			</div>
+			<div id="g-ai2-14" class="g-sm g-aiAbs g-aiPointText" style="top:47.072%;margin-top:-7.2px;left:65.1485%;width:56px;">
+				<p class="g-pstyle11">Odisha</p>
+			</div>
+			<div id="g-ai2-15" class="g-sm g-aiAbs g-aiPointText" style="top:47.3651%;margin-top:-7.2px;left:3.9468%;width:56px;">
+				<p class="g-pstyle10">Central</p>
+			</div>
+			<div id="g-ai2-16" class="g-sm g-aiAbs g-aiPointText" style="top:47.8537%;margin-top:-7.5px;left:22.8086%;width:28px;">
+				<p class="g-pstyle7">5</p>
+			</div>
+			<div id="g-ai2-17" class="g-sm g-aiAbs g-aiPointText" style="top:47.8538%;margin-top:-7.5px;left:30.6393%;width:28px;">
+				<p class="g-pstyle7">8</p>
+			</div>
+			<div id="g-ai2-18" class="g-sm g-aiAbs g-aiPointText" style="top:48.3534%;margin-top:-6.9px;left:87.4549%;width:33px;">
+				<p class="g-pstyle11">31</p>
+			</div>
+			<div id="g-ai2-19" class="g-sm g-aiAbs g-aiPointText" style="top:48.4999%;margin-top:-6.9px;left:47.3546%;width:33px;">
+				<p class="g-pstyle10">15</p>
+			</div>
+			<div id="g-ai2-20" class="g-sm g-aiAbs g-aiPointText" style="top:48.6465%;margin-top:-6.9px;left:67.4057%;width:33px;">
+				<p class="g-pstyle11">23</p>
+			</div>
+			<div id="g-ai2-21" class="g-sm g-aiAbs g-aiPointText" style="top:49.819%;margin-top:-6.9px;left:77.6606%;width:33px;">
+				<p class="g-pstyle11">27</p>
+			</div>
+			<div id="g-ai2-22" class="g-sm g-aiAbs" style="top:54.375%;left:18.552%;margin-left:-7.6471%;width:15.2941%;">
+				<p class="g-pstyle12">Northeastern states</p>
+			</div>
+			<div id="g-ai2-23" class="g-sm g-aiAbs g-aiPointText" style="top:57.4219%;margin-top:-7.8px;left:28.8108%;width:78px;">
+				<p class="g-pstyle7">Jharkhand</p>
+			</div>
+			<div id="g-ai2-24" class="g-sm g-aiAbs g-aiPointText" style="top:59.3833%;margin-top:-13.2px;left:72.4476%;margin-left:-27.5px;width:55px;">
+				<p class="g-pstyle8">West </p>
+				<p class="g-pstyle8">Bengal</p>
+			</div>
+			<div id="g-ai2-25" class="g-sm g-aiAbs g-aiPointText" style="top:59.0341%;margin-top:-7.8px;left:23.2944%;width:58px;">
+				<p class="g-pstyle7">Assam</p>
+			</div>
+			<div id="g-ai2-26" class="g-sm g-aiAbs g-aiPointText" style="top:60.1161%;margin-top:-13.2px;right:89.1478%;width:73px;">
+				<p class="g-pstyle13">East and </p>
+				<p class="g-pstyle13">North East</p>
+			</div>
+			<div id="g-ai2-27" class="g-sm g-aiAbs g-aiPointText" style="top:59.5299%;margin-top:-7.2px;left:79.7508%;width:48px;">
+				<p class="g-pstyle11">Bihar</p>
+			</div>
+			<div id="g-ai2-28" class="g-sm g-aiAbs g-aiPointText" style="top:59.7669%;margin-top:-7.8px;left:36.8665%;width:57px;">
+				<p class="g-pstyle7">Sikkim</p>
+			</div>
+			<div id="g-ai2-29" class="g-sm g-aiAbs g-aiPointText" style="top:60.0185%;margin-top:-7.5px;left:32.7487%;width:34px;">
+				<p class="g-pstyle7">10</p>
+			</div>
+			<div id="g-ai2-30" class="g-sm g-aiAbs g-aiPointText" style="top:60.4582%;margin-top:-7.5px;left:25.4208%;width:28px;">
+				<p class="g-pstyle7">6</p>
+			</div>
+			<div id="g-ai2-31" class="g-sm g-aiAbs g-aiPointText" style="top:61.1044%;margin-top:-6.9px;left:80.7982%;width:33px;">
+				<p class="g-pstyle11">28</p>
+			</div>
+			<div id="g-ai2-32" class="g-sm g-aiAbs g-aiPointText" style="top:61.191%;margin-top:-7.5px;left:39.4203%;width:33px;">
+				<p class="g-pstyle7">11</p>
+			</div>
+			<div id="g-ai2-33" class="g-sm g-aiAbs g-aiPointText" style="top:61.6906%;margin-top:-6.9px;left:71.3192%;width:33px;">
+				<p class="g-pstyle11">25</p>
+			</div>
+			<div id="g-ai2-34" class="g-sm g-aiAbs g-aiPointText" style="top:67.8839%;margin-top:-13.2px;left:85.4819%;margin-left:-30.5px;width:61px;">
+				<p class="g-pstyle8">Uttar </p>
+				<p class="g-pstyle8">Pradesh</p>
+			</div>
+			<div id="g-ai2-35" class="g-sm g-aiAbs g-aiPointText" style="top:69.4962%;margin-top:-13.2px;left:37.7358%;margin-left:-33.5px;width:67px;">
+				<p class="g-pstyle14">Jammu &</p>
+				<p class="g-pstyle14">Kashmir</p>
+			</div>
+			<div id="g-ai2-36" class="g-sm g-aiAbs g-aiPointText" style="top:69.0565%;margin-top:-7.2px;left:72.8754%;width:55px;">
+				<p class="g-pstyle11">Punjab</p>
+			</div>
+			<div id="g-ai2-37" class="g-sm g-aiAbs g-aiPointText" style="top:70.3378%;margin-top:-6.9px;left:84.0295%;width:33px;">
+				<p class="g-pstyle11">29</p>
+			</div>
+			<div id="g-ai2-38" class="g-sm g-aiAbs g-aiPointText" style="top:70.8153%;margin-top:-7.2px;left:62.84%;width:61px;">
+				<p class="g-pstyle11">Haryana</p>
+			</div>
+			<div id="g-ai2-39" class="g-sm g-aiAbs g-aiPointText" style="top:70.7775%;margin-top:-6.9px;left:74.8925%;width:33px;">
+				<p class="g-pstyle11">26</p>
+			</div>
+			<div id="g-ai2-40" class="g-sm g-aiAbs g-aiPointText" style="top:72.1343%;margin-top:-7.2px;left:42.2004%;width:46px;">
+				<p class="g-pstyle10">Delhi</p>
+			</div>
+			<div id="g-ai2-41" class="g-sm g-aiAbs g-aiPointText" style="top:72.2809%;margin-top:-7.2px;left:0.258%;width:75px;">
+				<p class="g-pstyle10">North West</p>
+			</div>
+			<div id="g-ai2-42" class="g-sm g-aiAbs g-aiPointText" style="top:72.5363%;margin-top:-6.9px;left:65.6469%;width:33px;">
+				<p class="g-pstyle11">25</p>
+			</div>
+			<div id="g-ai2-43" class="g-sm g-aiAbs g-aiPointText" style="top:72.6828%;margin-top:-6.9px;left:37.0911%;width:32px;">
+				<p class="g-pstyle10">11</p>
+			</div>
+			<div id="g-ai2-44" class="g-sm g-aiAbs g-aiPointText" style="top:73.2691%;margin-top:-6.9px;left:43.2184%;width:33px;">
+				<p class="g-pstyle10">12</p>
+			</div>
+			<div id="g-ai2-45" class="g-sm g-aiAbs g-aiPointText" style="top:74.1862%;margin-top:-7.2px;left:87.4549%;width:70px;">
+				<p class="g-pstyle11">Rajasthan</p>
+			</div>
+			<div id="g-ai2-46" class="g-sm g-aiAbs g-aiPointText" style="top:75.1804%;margin-top:-12px;left:82.1252%;margin-left:-32.5px;width:65px;">
+				<p class="g-pstyle15">Himachal </p>
+				<p class="g-pstyle15">Pradesh</p>
+			</div>
+			<div id="g-ai2-47" class="g-sm g-aiAbs g-aiPointText" style="top:75.6141%;margin-top:-6.9px;left:90.7754%;width:33px;">
+				<p class="g-pstyle11">31</p>
+			</div>
+			<div id="g-ai2-48" class="g-sm g-aiAbs g-aiPointText" style="top:76.4969%;margin-top:-5.9px;left:68.2184%;width:68px;">
+				<p class="g-pstyle16">Uttarakhand</p>
+			</div>
+			<div id="g-ai2-49" class="g-sm g-aiAbs g-aiPointText" style="top:77.5195%;margin-top:-6.9px;left:80.8547%;width:33px;">
+				<p class="g-pstyle11">28</p>
+			</div>
+			<div id="g-ai2-50" class="g-sm g-aiAbs g-aiPointText" style="top:78.1057%;margin-top:-6.9px;left:71.3675%;width:33px;">
+				<p class="g-pstyle11">25</p>
+			</div>
+			<div id="g-ai2-51" class="g-sm g-aiAbs g-aiPointText" style="top:81.2213%;margin-top:-13.2px;left:34.2323%;margin-left:-30.5px;width:61px;">
+				<p class="g-pstyle14">Andhra </p>
+				<p class="g-pstyle14">Pradesh</p>
+			</div>
+			<div id="g-ai2-52" class="g-sm g-aiAbs g-aiPointText" style="top:81.9541%;margin-top:-7.2px;left:39.2851%;width:70px;">
+				<p class="g-pstyle10">Karnataka</p>
+			</div>
+			<div id="g-ai2-53" class="g-sm g-aiAbs g-aiPointText" style="top:84.4457%;margin-top:-13.2px;right:89.4791%;width:69px;">
+				<p class="g-pstyle13">South </p>
+				<p class="g-pstyle13">Peninsula</p>
+			</div>
+			<div id="g-ai2-54" class="g-sm g-aiAbs g-aiPointText" style="top:84.2991%;margin-top:-7.2px;left:45.4671%;width:71px;">
+				<p class="g-pstyle10">Telangana</p>
+			</div>
+			<div id="g-ai2-55" class="g-sm g-aiAbs g-aiPointText" style="top:84.9941%;margin-top:-6.9px;left:39.8123%;width:32px;">
+				<p class="g-pstyle10">11</p>
+			</div>
+			<div id="g-ai2-56" class="g-sm g-aiAbs g-aiPointText" style="top:85.2873%;margin-top:-6.9px;left:28.8108%;width:28px;">
+				<p class="g-pstyle10">8</p>
+			</div>
+			<div id="g-ai2-57" class="g-sm g-aiAbs g-aiPointText" style="top:85.2873%;margin-top:-6.9px;left:33.645%;width:33px;">
+				<p class="g-pstyle10">10</p>
+			</div>
+			<div id="g-ai2-58" class="g-sm g-aiAbs g-aiPointText" style="top:85.7269%;margin-top:-6.9px;left:48.0096%;width:33px;">
+				<p class="g-pstyle10">15</p>
+			</div>
+			<div id="g-ai2-59" class="g-sm g-aiAbs g-aiPointText" style="top:88.9891%;margin-top:-13.2px;left:28.8907%;margin-left:-25px;width:50px;">
+				<p class="g-pstyle14">Tamil </p>
+				<p class="g-pstyle14">Nadu</p>
+			</div>
+			<div id="g-ai2-60" class="g-sm g-aiAbs g-aiPointText" style="top:90.0506%;margin-top:-6.4px;left:32.7487%;width:253px;">
+				<p class="g-pstyle17">Days with extreme weather events (Jan-April 2023)</p>
+			</div>
+			<div id="g-ai2-61" class="g-sm g-aiAbs g-aiPointText" style="top:92.5169%;margin-top:-5.2px;left:10.6312%;width:26px;">
+				<p class="g-pstyle18">0</p>
+			</div>
+			<div id="g-ai2-62" class="g-sm g-aiAbs g-aiPointText" style="top:92.5169%;margin-top:-5.2px;left:47.8007%;width:29px;">
+				<p class="g-pstyle18">15</p>
+			</div>
+			<div id="g-ai2-63" class="g-sm g-aiAbs g-aiPointText" style="top:92.5169%;margin-top:-5.2px;left:85.3155%;width:29px;">
+				<p class="g-pstyle18">30</p>
+			</div>
+			<div id="g-ai2-64" class="g-sm g-aiAbs g-aiPointText" style="top:95.0328%;margin-top:-8.4px;right:4.3054%;width:487px;">
+				<p class="g-pstyle19"><span class="g-cstyle1">Source: </span>India&rsquo;s Atlas on Extreme Weather Events, Centre for Science and Environment</p>
+			</div>
+		</div>
+
+		<!-- Artboard: md -->
+		<div id="g-2023-4-months-md" class="g-artboard" style="width:660px; height:501.571172505618px;" data-aspect-ratio="1.316" data-min-width="660" data-max-width="929">
+	<div style=""></div>
+			<img id="g-2023-4-months-md-img" class="g-4-months-md-img g-aiImg" alt="" src="ai2html/images/2023-4-months-md.png"/>
+			<div id="g-ai3-1" class="g-md g-aiAbs g-aiPointText" style="top:9.28%;margin-top:-18.5px;left:6.5247%;width:291px;">
+				<p class="g-pstyle0">Widespread disasters</p>
+			</div>
+			<div id="g-ai3-2" class="g-md g-aiAbs g-aiPointText" style="top:15.6718%;margin-top:-15.6px;left:6.5493%;width:524px;">
+				<p class="g-pstyle1">In the first four months of 2023, at least <span class="g-cstyle0">33 states/UTs </span>reported extreme weather events. </p>
+				<p class="g-pstyle1"><span class="g-cstyle0">North west</span> remained the <span class="g-cstyle0">worst affected region</span> owing to series of hailstorms </p>
+			</div>
+			<div id="g-ai3-3" class="g-md g-aiAbs g-aiPointText" style="top:25.9067%;margin-top:-26.9px;right:1.4889%;width:149px;">
+				<p class="g-pstyle2">Days with extreme </p>
+				<p class="g-pstyle2">weather events </p>
+				<p class="g-pstyle2">(Jan-April 2023)</p>
+			</div>
+			<div id="g-ai3-4" class="g-md g-aiAbs g-aiPointText" style="top:22.0117%;margin-top:-5.4px;left:8.1736%;width:46px;">
+				<p class="g-pstyle3">Region</p>
+			</div>
+			<div id="g-ai3-5" class="g-md g-aiAbs g-aiPointText" style="top:25.5073%;margin-top:-5.9px;left:31.8048%;width:71px;">
+				<p class="g-pstyle4">Chhattisgarh</p>
+			</div>
+			<div id="g-ai3-6" class="g-md g-aiAbs g-aiPointText" style="top:26.8618%;margin-top:-5.7px;left:34.082%;width:31px;">
+				<p class="g-pstyle4">15</p>
+			</div>
+			<div id="g-ai3-7" class="g-md g-aiAbs g-aiPointText" style="top:29.0561%;margin-top:-10.7px;left:57.0239%;margin-left:-27px;width:54px;">
+				<p class="g-pstyle5">Madhya </p>
+				<p class="g-pstyle5">Pradesh</p>
+			</div>
+			<div id="g-ai3-8" class="g-md g-aiAbs g-aiPointText" style="top:28.2985%;margin-top:-5.9px;left:20.613%;width:50px;">
+				<p class="g-pstyle4">Gujarat</p>
+			</div>
+			<div id="g-ai3-9" class="g-md g-aiAbs g-aiPointText" style="top:28.4979%;margin-top:-5.9px;left:48.0302%;width:49px;">
+				<p class="g-pstyle6">Odisha</p>
+			</div>
+			<div id="g-ai3-10" class="g-md g-aiAbs g-aiPointText" style="top:28.6973%;margin-top:-5.9px;left:15.7569%;width:38px;">
+				<p class="g-pstyle4">Goa</p>
+			</div>
+			<div id="g-ai3-11" class="g-md g-aiAbs g-aiPointText" style="top:29.1428%;margin-top:-7.2px;left:2.1077%;width:56px;">
+				<p class="g-pstyle7">Central</p>
+			</div>
+			<div id="g-ai3-12" class="g-md g-aiAbs g-aiPointText" style="top:29.2954%;margin-top:-5.9px;left:60.4888%;width:70px;">
+				<p class="g-pstyle6">Maharashtra</p>
+			</div>
+			<div id="g-ai3-13" class="g-md g-aiAbs g-aiPointText" style="top:29.8524%;margin-top:-5.7px;left:49.0562%;width:31px;">
+				<p class="g-pstyle6">23</p>
+			</div>
+			<div id="g-ai3-14" class="g-md g-aiAbs g-aiPointText" style="top:30.2512%;margin-top:-5.7px;left:16.3828%;width:26px;">
+				<p class="g-pstyle4">5</p>
+			</div>
+			<div id="g-ai3-15" class="g-md g-aiAbs g-aiPointText" style="top:30.2512%;margin-top:-5.7px;left:22.0455%;width:26px;">
+				<p class="g-pstyle4">8</p>
+			</div>
+			<div id="g-ai3-16" class="g-md g-aiAbs g-aiPointText" style="top:31.0487%;margin-top:-5.7px;left:63.5759%;width:31px;">
+				<p class="g-pstyle6">31</p>
+			</div>
+			<div id="g-ai3-17" class="g-md g-aiAbs g-aiPointText" style="top:31.8462%;margin-top:-5.7px;left:56.1647%;width:31px;">
+				<p class="g-pstyle6">27</p>
+			</div>
+			<div id="g-ai3-18" class="g-md g-aiAbs" style="top:38.6785%;left:12.9887%;margin-left:-5.2273%;width:10.4545%;">
+				<p class="g-pstyle8">Northeastern states</p>
+			</div>
+			<div id="g-ai3-19" class="g-md g-aiAbs g-aiPointText" style="top:42.2547%;margin-top:-5.9px;left:22.025%;width:62px;">
+				<p class="g-pstyle4">Jharkhand</p>
+			</div>
+			<div id="g-ai3-20" class="g-md g-aiAbs g-aiPointText" style="top:43.6092%;margin-top:-5.7px;left:23.8023%;width:31px;">
+				<p class="g-pstyle4">10</p>
+			</div>
+			<div id="g-ai3-21" class="g-md g-aiAbs g-aiPointText" style="top:45.006%;margin-top:-10.7px;left:52.3523%;margin-left:-24.5px;width:49px;">
+				<p class="g-pstyle5">West </p>
+				<p class="g-pstyle5">Bengal</p>
+			</div>
+			<div id="g-ai3-22" class="g-md g-aiAbs g-aiPointText" style="top:45.4914%;margin-top:-13.2px;right:92.5582%;width:54px;">
+				<p class="g-pstyle9">East &</p>
+				<p class="g-pstyle9">N-East</p>
+			</div>
+			<div id="g-ai3-23" class="g-md g-aiAbs g-aiPointText" style="top:44.4478%;margin-top:-5.9px;left:27.4141%;width:48px;">
+				<p class="g-pstyle4">Sikkim</p>
+			</div>
+			<div id="g-ai3-24" class="g-md g-aiAbs g-aiPointText" style="top:44.6472%;margin-top:-5.9px;left:16.7709%;width:48px;">
+				<p class="g-pstyle4">Assam</p>
+			</div>
+			<div id="g-ai3-25" class="g-md g-aiAbs g-aiPointText" style="top:45.2453%;margin-top:-5.9px;left:57.993%;width:43px;">
+				<p class="g-pstyle6">Bihar</p>
+			</div>
+			<div id="g-ai3-26" class="g-md g-aiAbs g-aiPointText" style="top:45.8023%;margin-top:-5.7px;left:28.3991%;width:30px;">
+				<p class="g-pstyle4">11</p>
+			</div>
+			<div id="g-ai3-27" class="g-md g-aiAbs g-aiPointText" style="top:46.0017%;margin-top:-5.7px;left:18.3895%;width:26px;">
+				<p class="g-pstyle4">6</p>
+			</div>
+			<div id="g-ai3-28" class="g-md g-aiAbs g-aiPointText" style="top:46.3908%;margin-top:-5.7px;left:81.4422%;width:50px;">
+				<p class="g-pstyle4">15 days</p>
+			</div>
+			<div id="g-ai3-29" class="g-md g-aiAbs g-aiPointText" style="top:46.3908%;margin-top:-5.7px;left:73.3522%;width:41px;">
+				<p class="g-pstyle4">1 day</p>
+			</div>
+			<div id="g-ai3-30" class="g-md g-aiAbs g-aiPointText" style="top:46.5902%;margin-top:-5.7px;left:93.0116%;width:50px;">
+				<p class="g-pstyle4">31 days</p>
+			</div>
+			<div id="g-ai3-31" class="g-md g-aiAbs g-aiPointText" style="top:46.5998%;margin-top:-5.7px;left:58.6436%;width:31px;">
+				<p class="g-pstyle6">28</p>
+			</div>
+			<div id="g-ai3-32" class="g-md g-aiAbs g-aiPointText" style="top:47.5967%;margin-top:-5.7px;left:51.4913%;width:31px;">
+				<p class="g-pstyle6">25</p>
+			</div>
+			<div id="g-ai3-33" class="g-md g-aiAbs g-aiPointText" style="top:55.1741%;margin-top:-10.7px;left:61.9474%;margin-left:-27px;width:54px;">
+				<p class="g-pstyle5">Uttar </p>
+				<p class="g-pstyle5">Pradesh</p>
+			</div>
+			<div id="g-ai3-34" class="g-md g-aiAbs g-aiPointText" style="top:57.3672%;margin-top:-10.7px;left:27.2184%;margin-left:-29px;width:58px;">
+				<p class="g-pstyle10">Jammu &</p>
+				<p class="g-pstyle10">Kashmir</p>
+			</div>
+			<div id="g-ai3-35" class="g-md g-aiAbs g-aiPointText" style="top:57.0084%;margin-top:-5.9px;left:53.49%;width:49px;">
+				<p class="g-pstyle6">Punjab</p>
+			</div>
+			<div id="g-ai3-36" class="g-md g-aiAbs g-aiPointText" style="top:57.8059%;margin-top:-5.9px;left:16.7063%;width:66px;">
+				<p class="g-pstyle4">Chandigarh</p>
+			</div>
+			<div id="g-ai3-37" class="g-md g-aiAbs g-aiPointText" style="top:57.9641%;margin-top:-5.7px;left:61.035%;width:31px;">
+				<p class="g-pstyle6">29</p>
+			</div>
+			<div id="g-ai3-38" class="g-md g-aiAbs g-aiPointText" style="top:58.3629%;margin-top:-5.7px;left:54.4905%;width:31px;">
+				<p class="g-pstyle6">26</p>
+			</div>
+			<div id="g-ai3-39" class="g-md g-aiAbs g-aiPointText" style="top:59.2015%;margin-top:-5.9px;left:45.9786%;width:54px;">
+				<p class="g-pstyle6">Haryana</p>
+			</div>
+			<div id="g-ai3-40" class="g-md g-aiAbs g-aiPointText" style="top:59.6002%;margin-top:-5.9px;left:13.4957%;width:50px;">
+				<p class="g-pstyle4">Ladakh</p>
+			</div>
+			<div id="g-ai3-41" class="g-md g-aiAbs g-aiPointText" style="top:70.7301%;margin-top:-63.8px;left:86.7177%;margin-left:-87.5px;width:175px;">
+				<p class="g-pstyle11">11</p>
+				<p class="g-pstyle12">States/Union Territories </p>
+				<p class="g-pstyle12">recorded extreme weather </p>
+				<p class="g-pstyle12">events on 20 days </p>
+				<p class="g-pstyle12">or more in the first </p>
+				<p class="g-pstyle12">120 days of 2023</p>
+			</div>
+			<div id="g-ai3-42" class="g-md g-aiAbs g-aiPointText" style="top:61.4413%;margin-top:-13.2px;right:92.6189%;width:51px;">
+				<p class="g-pstyle9">North </p>
+				<p class="g-pstyle9">West</p>
+			</div>
+			<div id="g-ai3-43" class="g-md g-aiAbs g-aiPointText" style="top:60.3566%;margin-top:-5.7px;left:26.9406%;width:30px;">
+				<p class="g-pstyle4">11</p>
+			</div>
+			<div id="g-ai3-44" class="g-md g-aiAbs g-aiPointText" style="top:60.7554%;margin-top:-5.7px;left:21.7382%;width:31px;">
+				<p class="g-pstyle4">10</p>
+			</div>
+			<div id="g-ai3-45" class="g-md g-aiAbs g-aiPointText" style="top:60.9958%;margin-top:-5.9px;left:30.4573%;width:42px;">
+				<p class="g-pstyle4">Delhi</p>
+			</div>
+			<div id="g-ai3-46" class="g-md g-aiAbs g-aiPointText" style="top:60.9547%;margin-top:-5.7px;left:14.8225%;width:26px;">
+				<p class="g-pstyle4">4</p>
+			</div>
+			<div id="g-ai3-47" class="g-md g-aiAbs g-aiPointText" style="top:61.1541%;margin-top:-5.7px;left:47.7102%;width:31px;">
+				<p class="g-pstyle6">25</p>
+			</div>
+			<div id="g-ai3-48" class="g-md g-aiAbs g-aiPointText" style="top:62.3504%;margin-top:-5.7px;left:31.0576%;width:31px;">
+				<p class="g-pstyle4">12</p>
+			</div>
+			<div id="g-ai3-49" class="g-md g-aiAbs g-aiPointText" style="top:64.3453%;margin-top:-10.7px;left:59.4273%;margin-left:-30px;width:60px;">
+				<p class="g-pstyle5">Himachal </p>
+				<p class="g-pstyle5">Pradesh</p>
+			</div>
+			<div id="g-ai3-50" class="g-md g-aiAbs g-aiPointText" style="top:63.5877%;margin-top:-5.9px;left:63.5984%;width:60px;">
+				<p class="g-pstyle6">Rajasthan</p>
+			</div>
+			<div id="g-ai3-51" class="g-md g-aiAbs g-aiPointText" style="top:65.341%;margin-top:-5.7px;left:66.0079%;width:31px;">
+				<p class="g-pstyle6">31</p>
+			</div>
+			<div id="g-ai3-52" class="g-md g-aiAbs g-aiPointText" style="top:66.936%;margin-top:-5.7px;left:58.8776%;width:31px;">
+				<p class="g-pstyle6">28</p>
+			</div>
+			<div id="g-ai3-53" class="g-md g-aiAbs g-aiPointText" style="top:68.3316%;margin-top:-5.7px;left:51.6391%;width:31px;">
+				<p class="g-pstyle6">25</p>
+			</div>
+			<div id="g-ai3-54" class="g-md g-aiAbs g-aiPointText" style="top:72.719%;margin-top:-10.7px;left:25.3056%;margin-left:-27px;width:54px;">
+				<p class="g-pstyle10">Andhra </p>
+				<p class="g-pstyle10">Pradesh</p>
+			</div>
+			<div id="g-ai3-55" class="g-md g-aiAbs g-aiPointText" style="top:72.1607%;margin-top:-5.9px;left:49.3601%;width:69px;">
+				<p class="g-pstyle4">Uttarakhand</p>
+			</div>
+			<div id="g-ai3-56" class="g-md g-aiAbs g-aiPointText" style="top:73.5564%;margin-top:-5.9px;left:28.2589%;width:61px;">
+				<p class="g-pstyle4">Karnataka</p>
+			</div>
+			<div id="g-ai3-57" class="g-md g-aiAbs g-aiPointText" style="top:75.1513%;margin-top:-5.9px;left:12.2694%;width:66px;">
+				<p class="g-pstyle4">Puducherry</p>
+			</div>
+			<div id="g-ai3-58" class="g-md g-aiAbs g-aiPointText" style="top:76.9924%;margin-top:-13.2px;right:92.5419%;width:69px;">
+				<p class="g-pstyle9">South</p>
+				<p class="g-pstyle9">Peninsula</p>
+			</div>
+			<div id="g-ai3-59" class="g-md g-aiAbs g-aiPointText" style="top:75.7495%;margin-top:-5.9px;left:8.2506%;width:46px;">
+				<p class="g-pstyle4">Kerala</p>
+			</div>
+			<div id="g-ai3-60" class="g-md g-aiAbs g-aiPointText" style="top:76.9058%;margin-top:-10.7px;left:21.0826%;margin-left:-22.5px;width:45px;">
+				<p class="g-pstyle10">Tamil </p>
+				<p class="g-pstyle10">Nadu</p>
+			</div>
+			<div id="g-ai3-61" class="g-md g-aiAbs g-aiPointText" style="top:75.9078%;margin-top:-5.7px;left:24.3127%;width:31px;">
+				<p class="g-pstyle4">10</p>
+			</div>
+			<div id="g-ai3-62" class="g-md g-aiAbs g-aiPointText" style="top:76.3476%;margin-top:-5.9px;left:32.8429%;width:61px;">
+				<p class="g-pstyle4">Telangana</p>
+			</div>
+			<div id="g-ai3-63" class="g-md g-aiAbs g-aiPointText" style="top:76.7053%;margin-top:-5.7px;left:13.6135%;width:26px;">
+				<p class="g-pstyle4">3</p>
+			</div>
+			<div id="g-ai3-64" class="g-md g-aiAbs g-aiPointText" style="top:76.7053%;margin-top:-5.7px;left:28.4549%;width:30px;">
+				<p class="g-pstyle4">11</p>
+			</div>
+			<div id="g-ai3-65" class="g-md g-aiAbs g-aiPointText" style="top:77.104%;margin-top:-5.7px;left:9.3776%;width:26px;">
+				<p class="g-pstyle4">1</p>
+			</div>
+			<div id="g-ai3-66" class="g-md g-aiAbs g-aiPointText" style="top:78.1009%;margin-top:-5.7px;left:34.688%;width:31px;">
+				<p class="g-pstyle4">15</p>
+			</div>
+			<div id="g-ai3-67" class="g-md g-aiAbs g-aiPointText" style="top:78.9553%;margin-top:-4px;left:20.7664%;width:25px;">
+				<p class="g-pstyle13">8</p>
+			</div>
+			<div id="g-ai3-68" class="g-md g-aiAbs g-aiPointText" style="top:83.648%;margin-top:-6.6px;left:23.6135%;width:239px;">
+				<p class="g-pstyle14">Days with extreme weather events (Jan-April 2023)</p>
+			</div>
+			<div id="g-ai3-69" class="g-md g-aiAbs g-aiPointText" style="top:86.8238%;margin-top:-4.5px;left:7.5627%;width:25px;">
+				<p class="g-pstyle15">0</p>
+			</div>
+			<div id="g-ai3-70" class="g-md g-aiAbs g-aiPointText" style="top:86.8238%;margin-top:-4.5px;left:34.5365%;width:29px;">
+				<p class="g-pstyle15">15</p>
+			</div>
+			<div id="g-ai3-71" class="g-md g-aiAbs g-aiPointText" style="top:86.8238%;margin-top:-4.5px;left:61.761%;width:29px;">
+				<p class="g-pstyle15">30</p>
+			</div>
+			<div id="g-ai3-72" class="g-md g-aiAbs g-aiPointText" style="top:91.9925%;margin-top:-8.4px;right:22.7074%;width:487px;">
+				<p class="g-pstyle16"><span class="g-cstyle1">Source: </span>India&rsquo;s Atlas on Extreme Weather Events, Centre for Science and Environment</p>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		(function (containerId, opts) {
+				var nameSpace = opts.namespace || '';
+				var containers = findContainers(containerId);
+				containers.forEach(resize);
+
+				function resize(container) {
+					var onResize = throttle(update, 200);
+					var waiting = !!window.IntersectionObserver;
+					var observer;
+					update();
+
+					document.addEventListener('DOMContentLoaded', update);
+					window.addEventListener('resize', onResize);
+
+					// NYT Scoop-specific code
+					if (opts.setup) {
+						opts.setup(container).on('cleanup', cleanup);
+					}
+
+					function cleanup() {
+						document.removeEventListener('DOMContentLoaded', update);
+						window.removeEventListener('resize', onResize);
+						if (observer) observer.disconnect();
+					}
+
+					function update() {
+						var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+							width = Math.round(container.getBoundingClientRect().width);
+
+						// Set artboard visibility based on container width
+						artboards.forEach(function (el) {
+							var minwidth = el.getAttribute('data-min-width'),
+								maxwidth = el.getAttribute('data-max-width');
+							if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+								if (!waiting) {
+									selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+								}
+								el.style.display = 'block';
+							} else {
+								el.style.display = 'none';
+							}
+						});
+
+						// Initialize lazy loading on first call
+						if (waiting && !observer) {
+							if (elementInView(container)) {
+								waiting = false;
+								update();
+							} else {
+								observer = new IntersectionObserver(onIntersectionChange, {});
+								observer.observe(container);
+							}
+						}
+					}
+
+					function onIntersectionChange(entries) {
+						// There may be multiple entries relating to the same container
+						// (captured at different times)
+						var isIntersecting = entries.reduce(function (memo, entry) {
+							return memo || entry.isIntersecting;
+						}, false);
+						if (isIntersecting) {
+							waiting = false;
+							// update: don't remove -- we need the observer to trigger an update
+							// when a hidden map becomes visible after user interaction
+							// (e.g. when an accordion menu or tab opens)
+							// observer.disconnect();
+							// observer = null;
+							update();
+						}
+					}
+				}
+
+				function findContainers(id) {
+					// support duplicate ids on the page
+					return selectChildren('.ai2html-responsive', document).filter(function (el) {
+						if (el.getAttribute('id') != id) return false;
+						if (el.classList.contains('ai2html-resizer')) return false;
+						el.classList.add('ai2html-resizer');
+						return true;
+					});
+				}
+
+				// Replace blank placeholder image with actual image
+				function updateImgSrc(img) {
+					var src = img.getAttribute('data-src');
+					if (src && img.getAttribute('src') != src) {
+						img.setAttribute('src', src);
+					}
+				}
+
+				function elementInView(el) {
+					var bounds = el.getBoundingClientRect();
+					return bounds.top < window.innerHeight && bounds.bottom > 0;
+				}
+
+				function selectChildren(selector, parent) {
+					return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+				}
+
+				// based on underscore.js
+				function throttle(func, wait) {
+					var timeout = null, previous = 0;
+					function run() {
+						previous = Date.now();
+						timeout = null;
+						func();
+					}
+					return function () {
+						var remaining = wait - (Date.now() - previous);
+						if (remaining <= 0 || remaining > wait) {
+							clearTimeout(timeout);
+							run();
+						} else if (!timeout) {
+							timeout = setTimeout(run, remaining);
+						}
+					};
+				}
+			})("g-2023-4-months-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+	</script>
+	<!-- End ai2html - 2023-07-12 00:45 -->
+
+	<!-- End ai2html - 2023-07-11 22:53 -->
+
+
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		(function (containerId, opts) {
+				var nameSpace = opts.namespace || '';
+				var containers = findContainers(containerId);
+				containers.forEach(resize);
+
+				function resize(container) {
+					var onResize = throttle(update, 200);
+					var waiting = !!window.IntersectionObserver;
+					var observer;
+					update();
+
+					document.addEventListener('DOMContentLoaded', update);
+					window.addEventListener('resize', onResize);
+
+					// NYT Scoop-specific code
+					if (opts.setup) {
+						opts.setup(container).on('cleanup', cleanup);
+					}
+
+					function cleanup() {
+						document.removeEventListener('DOMContentLoaded', update);
+						window.removeEventListener('resize', onResize);
+						if (observer) observer.disconnect();
+					}
+
+					function update() {
+						var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+							width = Math.round(container.getBoundingClientRect().width);
+
+						// Set artboard visibility based on container width
+						artboards.forEach(function (el) {
+							var minwidth = el.getAttribute('data-min-width'),
+								maxwidth = el.getAttribute('data-max-width');
+							if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+								if (!waiting) {
+									selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+								}
+								el.style.display = 'block';
+							} else {
+								el.style.display = 'none';
+							}
+						});
+
+						// Initialize lazy loading on first call
+						if (waiting && !observer) {
+							if (elementInView(container)) {
+								waiting = false;
+								update();
+							} else {
+								observer = new IntersectionObserver(onIntersectionChange, {});
+								observer.observe(container);
+							}
+						}
+					}
+
+					function onIntersectionChange(entries) {
+						// There may be multiple entries relating to the same container
+						// (captured at different times)
+						var isIntersecting = entries.reduce(function (memo, entry) {
+							return memo || entry.isIntersecting;
+						}, false);
+						if (isIntersecting) {
+							waiting = false;
+							// update: don't remove -- we need the observer to trigger an update
+							// when a hidden map becomes visible after user interaction
+							// (e.g. when an accordion menu or tab opens)
+							// observer.disconnect();
+							// observer = null;
+							update();
+						}
+					}
+				}
+
+				function findContainers(id) {
+					// support duplicate ids on the page
+					return selectChildren('.ai2html-responsive', document).filter(function (el) {
+						if (el.getAttribute('id') != id) return false;
+						if (el.classList.contains('ai2html-resizer')) return false;
+						el.classList.add('ai2html-resizer');
+						return true;
+					});
+				}
+
+				// Replace blank placeholder image with actual image
+				function updateImgSrc(img) {
+					var src = img.getAttribute('data-src');
+					if (src && img.getAttribute('src') != src) {
+						img.setAttribute('src', src);
+					}
+				}
+
+				function elementInView(el) {
+					var bounds = el.getBoundingClientRect();
+					return bounds.top < window.innerHeight && bounds.bottom > 0;
+				}
+
+				function selectChildren(selector, parent) {
+					return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+				}
+
+				// based on underscore.js
+				function throttle(func, wait) {
+					var timeout = null, previous = 0;
+					function run() {
+						previous = Date.now();
+						timeout = null;
+						func();
+					}
+					return function () {
+						var remaining = wait - (Date.now() - previous);
+						if (remaining <= 0 || remaining > wait) {
+							clearTimeout(timeout);
+							run();
+						} else if (!timeout) {
+							timeout = setTimeout(run, remaining);
+						}
+					};
+				}
+			})("g-Ai2HTML-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+	</script>
+	<!-- End ai2html - 2023-07-11 18:43 -->
+
+	<section class="chart-section">
+			<div class="chart-row">
+				<div class="chart">
+
+					<!--- PASTE YOUR AI2HTML AFTER THIS LINE -->
+
+					<section class="story-body">
+						<p class="body-text serif">This is almost the same as the number from last year (2022) when the number of such days totalled 89. For this analysis I have taken the data from the annual publication State of India’s Environment in figures 2023 which is published by the organization I am associated with, the Centre for Science and Environment (CSE) and its flagship magazine Down to Earth. 
+						 </p>
+						 <p class="body-text serif">
+							This is a project that has been central to my work as a journalist and one that I believe in implicitly. 70 percent of the days in the first four weeks of the last year experienced extreme weather anomalies.   
+							 </p>
+							 <p class="body-text serif">
+								The difference in the two year is striking as during the first four months of 2022, the most common kind of extreme weather events were heatwaves while in 2023, it was hailstorms. Of the 84 days with extreme weather events in 2023, hailstorms were reported on 58 days. 
+															 </p>
+							 <p class="body-text serif">
+								Whether it is untimely/extreme heatwaves or untimely/extreme hailstorms, the reasons fo the same can be traced back to global warming, weak western disturbances and a string subtropical jet stream. 
+																 </p>
+					</section>
+			
+
+
+    <section class="chart-section">
+        <div class="chart-row">
+            <div class="chart">
+
+                <!--- PASTE YOUR AI2HTML AFTER THIS LINE -->
+
+
+
+	<!-- Generated by ai2html v0.111.0 - 2023-07-12 00:46 -->
+	<!-- ai file: 2022_four_month.ai -->
+	<style media="screen,print">
+		#g-2022_four_month-box ,
+		#g-2022_four_month-box .g-artboard {
+			margin:0 auto;
+		}
+		#g-2022_four_month-box p {
+			margin:0;
+		}
+		#g-2022_four_month-box .g-aiAbs {
+			position:absolute;
+		}
+		#g-2022_four_month-box .g-aiImg {
+			position:absolute;
+			top:0;
+			display:block;
+			width:100% !important;
+		}
+		#g-2022_four_month-box .g-aiSymbol {
+			position: absolute;
+			box-sizing: border-box;
+		}
+		#g-2022_four_month-box .g-aiPointText p { white-space: nowrap; }
+		#g-2022_four_month-lg {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2022_four_month-lg p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:22px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:18px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2022_four_month-lg .g-pstyle0 {
+			line-height:43px;
+			height:43px;
+			font-size:36px;
+		}
+		#g-2022_four_month-lg .g-pstyle1 {
+			height:22px;
+		}
+		#g-2022_four_month-lg .g-pstyle2 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-lg .g-pstyle3 {
+			line-height:17px;
+			height:17px;
+			font-size:14px;
+			text-align:right;
+		}
+		#g-2022_four_month-lg .g-pstyle4 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-lg .g-pstyle5 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+		}
+		#g-2022_four_month-lg .g-pstyle6 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-lg .g-pstyle7 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+		}
+		#g-2022_four_month-lg .g-pstyle8 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:right;
+		}
+		#g-2022_four_month-lg .g-pstyle9 {
+			line-height:58px;
+			height:58px;
+			font-size:48px;
+			text-align:center;
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-lg .g-pstyle10 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:center;
+		}
+		#g-2022_four_month-lg .g-pstyle11 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-lg .g-pstyle12 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:right;
+		}
+		#g-2022_four_month-lg .g-pstyle13 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-lg .g-pstyle14 {
+			font-weight:500;
+			line-height:9px;
+			height:9px;
+			font-size:8px;
+		}
+		#g-2022_four_month-lg .g-cstyle0 {
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-lg .g-cstyle1 {
+			font-weight:bold;
+		}
+		#g-2022_four_month-xs {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2022_four_month-xs p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:12px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:10px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2022_four_month-xs .g-pstyle0 {
+			line-height:43px;
+			height:43px;
+			font-size:36px;
+		}
+		#g-2022_four_month-xs .g-pstyle1 {
+			line-height:17px;
+			height:17px;
+			font-size:14px;
+		}
+		#g-2022_four_month-xs .g-pstyle2 {
+			line-height:17px;
+			height:17px;
+			font-size:14px;
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-xs .g-pstyle3 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:right;
+		}
+		#g-2022_four_month-xs .g-pstyle4 {
+			line-height:48px;
+			height:48px;
+			font-size:40px;
+			text-align:center;
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-xs .g-pstyle5 {
+			height:12px;
+			text-align:center;
+		}
+		#g-2022_four_month-xs .g-pstyle6 {
+			line-height:9px;
+			height:9px;
+			font-size:8px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-xs .g-pstyle7 {
+			line-height:9px;
+			height:9px;
+			font-size:8px;
+		}
+		#g-2022_four_month-xs .g-pstyle8 {
+			line-height:6px;
+			height:6px;
+			font-size:5px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-xs .g-pstyle9 {
+			line-height:8px;
+			height:8px;
+			font-size:6px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-xs .g-pstyle10 {
+			line-height:8px;
+			height:8px;
+			font-size:6px;
+		}
+		#g-2022_four_month-xs .g-pstyle11 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+		}
+		#g-2022_four_month-xs .g-pstyle12 {
+			line-height:8px;
+			height:8px;
+			font-size:6px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-xs .g-pstyle13 {
+			line-height:8px;
+			height:8px;
+			font-size:6px;
+			text-align:center;
+		}
+		#g-2022_four_month-xs .g-pstyle14 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+			text-align:right;
+		}
+		#g-2022_four_month-xs .g-pstyle15 {
+			height:12px;
+		}
+		#g-2022_four_month-xs .g-pstyle16 {
+			height:12px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-xs .g-pstyle17 {
+			height:12px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-xs .g-pstyle18 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-xs .g-pstyle19 {
+			font-weight:500;
+			line-height:5px;
+			height:5px;
+			font-size:4px;
+		}
+		#g-2022_four_month-xs .g-cstyle0 {
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-xs .g-cstyle1 {
+			color:rgb(0,0,0);
+		}
+		#g-2022_four_month-xs .g-cstyle2 {
+			font-weight:bold;
+		}
+		#g-2022_four_month-sm {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2022_four_month-sm p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:12px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:10px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2022_four_month-sm .g-pstyle0 {
+			line-height:43px;
+			height:43px;
+			font-size:36px;
+		}
+		#g-2022_four_month-sm .g-pstyle1 {
+			line-height:17px;
+			height:17px;
+			font-size:14px;
+		}
+		#g-2022_four_month-sm .g-pstyle2 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:right;
+		}
+		#g-2022_four_month-sm .g-pstyle3 {
+			line-height:48px;
+			height:48px;
+			font-size:40px;
+			text-align:center;
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-sm .g-pstyle4 {
+			height:12px;
+			text-align:center;
+		}
+		#g-2022_four_month-sm .g-pstyle5 {
+			line-height:9px;
+			height:9px;
+			font-size:8px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-sm .g-pstyle6 {
+			line-height:9px;
+			height:9px;
+			font-size:8px;
+		}
+		#g-2022_four_month-sm .g-pstyle7 {
+			line-height:9px;
+			height:9px;
+			font-size:7px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-sm .g-pstyle8 {
+			height:12px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-sm .g-pstyle9 {
+			height:12px;
+		}
+		#g-2022_four_month-sm .g-pstyle10 {
+			height:12px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-sm .g-pstyle11 {
+			height:12px;
+			text-align:right;
+		}
+		#g-2022_four_month-sm .g-pstyle12 {
+			line-height:11px;
+			height:11px;
+			font-size:9px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-sm .g-pstyle13 {
+			height:12px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-sm .g-pstyle14 {
+			font-weight:500;
+			line-height:7px;
+			height:7px;
+			font-size:6px;
+		}
+		#g-2022_four_month-sm .g-cstyle0 {
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-sm .g-cstyle1 {
+			font-weight:bold;
+		}
+		#g-2022_four_month-md {
+			position:relative;
+			overflow:hidden;
+		}
+		#g-2022_four_month-md p {
+			font-family:arial,helvetica,sans-serif;
+			font-weight:bold;
+			line-height:17px;
+			height:auto;
+			opacity:1;
+			letter-spacing:0em;
+			font-size:14px;
+			text-align:left;
+			color:rgb(0,0,0);
+			text-transform:none;
+			padding-bottom:0;
+			padding-top:0;
+			mix-blend-mode:normal;
+			font-style:normal;
+			position:static;
+		}
+		#g-2022_four_month-md .g-pstyle0 {
+			line-height:43px;
+			height:43px;
+			font-size:36px;
+		}
+		#g-2022_four_month-md .g-pstyle1 {
+			height:17px;
+		}
+		#g-2022_four_month-md .g-pstyle2 {
+			line-height:10px;
+			height:10px;
+			font-size:8px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-md .g-pstyle3 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-md .g-pstyle4 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+		}
+		#g-2022_four_month-md .g-pstyle5 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			color:rgb(255,255,255);
+		}
+		#g-2022_four_month-md .g-pstyle6 {
+			height:17px;
+			text-align:right;
+		}
+		#g-2022_four_month-md .g-pstyle7 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:center;
+		}
+		#g-2022_four_month-md .g-pstyle8 {
+			line-height:12px;
+			height:12px;
+			font-size:10px;
+			text-align:right;
+		}
+		#g-2022_four_month-md .g-pstyle9 {
+			line-height:14px;
+			height:14px;
+			font-size:12px;
+			text-align:right;
+		}
+		#g-2022_four_month-md .g-pstyle10 {
+			line-height:13px;
+			height:13px;
+			font-size:11px;
+			color:rgb(123,123,123);
+		}
+		#g-2022_four_month-md .g-pstyle11 {
+			font-weight:500;
+			line-height:8px;
+			height:8px;
+			font-size:7px;
+		}
+		#g-2022_four_month-md .g-cstyle0 {
+			color:rgb(20,70,154);
+		}
+		#g-2022_four_month-md .g-cstyle1 {
+			font-weight:bold;
+		}
+
+	</style>
+
+	<div id="g-2022_four_month-box" class="ai2html ai2html-responsive">
+
+		<!-- Artboard: lg -->
+		<div id="g-2022_four_month-lg" class="g-artboard" style="width:930px; height:565.314163328107px;" data-aspect-ratio="1.645" data-min-width="930">
+	<div style=""></div>
+			<img id="g-2022_four_month-lg-img" class="g-2022_four_month-lg-img g-aiImg" alt="" src="ai2html/images/2022_four_month-lg.png"/>
+			<div id="g-ai0-1" class="g-lg g-aiAbs g-aiPointText" style="top:6.1415%;margin-top:-25.7px;left:7.6809%;width:334px;">
+				<p class="g-pstyle0">Extreme concerns</p>
+			</div>
+			<div id="g-ai0-2" class="g-lg g-aiAbs g-aiPointText" style="top:13.2509%;margin-top:-23.9px;left:7.5908%;width:779px;">
+				<p class="g-pstyle1">In the first four months of 2022, at least <span class="g-cstyle0">27 states/UTs</span> recorded extreme weather events. </p>
+				<p class="g-pstyle1"><span class="g-cstyle0">North west</span> remained the <span class="g-cstyle0">worst affected region </span>owing to heatwave spells </p>
+			</div>
+			<div id="g-ai0-3" class="g-lg g-aiAbs g-aiPointText" style="top:22.2348%;margin-top:-6.7px;left:7.9128%;width:53px;">
+				<p class="g-pstyle2">Region</p>
+			</div>
+			<div id="g-ai0-4" class="g-lg g-aiAbs g-aiPointText" style="top:28.823%;margin-top:-26.9px;right:10.0383%;width:149px;">
+				<p class="g-pstyle3">Days with extreme </p>
+				<p class="g-pstyle3">weather events </p>
+				<p class="g-pstyle3">(Jan-April 2022)</p>
+			</div>
+			<div id="g-ai0-5" class="g-lg g-aiAbs g-aiPointText" style="top:29.3946%;margin-top:-13.2px;left:65.9331%;margin-left:-31px;width:62px;">
+				<p class="g-pstyle4">Madhya </p>
+				<p class="g-pstyle4">Pradesh</p>
+			</div>
+			<div id="g-ai0-6" class="g-lg g-aiAbs g-aiPointText" style="top:28.687%;margin-top:-7.2px;left:9.0565%;width:41px;">
+				<p class="g-pstyle5">Goa</p>
+			</div>
+			<div id="g-ai0-7" class="g-lg g-aiAbs g-aiPointText" style="top:29.5715%;margin-top:-7.2px;left:16.5331%;width:56px;">
+				<p class="g-pstyle5">Odisha</p>
+			</div>
+			<div id="g-ai0-8" class="g-lg g-aiAbs g-aiPointText" style="top:29.7484%;margin-top:-7.2px;left:36.5053%;width:81px;">
+				<p class="g-pstyle5">Maharashtra</p>
+			</div>
+			<div id="g-ai0-9" class="g-lg g-aiAbs g-aiPointText" style="top:29.9253%;margin-top:-7.2px;left:26.6821%;width:57px;">
+				<p class="g-pstyle5">Gujarat</p>
+			</div>
+			<div id="g-ai0-10" class="g-lg g-aiAbs g-aiPointText" style="top:30.4104%;margin-top:-6.9px;left:9.6307%;width:28px;">
+				<p class="g-pstyle5">2</p>
+			</div>
+			<div id="g-ai0-11" class="g-lg g-aiAbs g-aiPointText" style="top:30.6329%;margin-top:-7.2px;left:3.6847%;width:56px;">
+				<p class="g-pstyle5">Central</p>
+			</div>
+			<div id="g-ai0-12" class="g-lg g-aiAbs g-aiPointText" style="top:30.7642%;margin-top:-6.9px;left:13.0633%;width:28px;">
+				<p class="g-pstyle5">5</p>
+			</div>
+			<div id="g-ai0-13" class="g-lg g-aiAbs g-aiPointText" style="top:31.118%;margin-top:-6.9px;left:17.7049%;width:28px;">
+				<p class="g-pstyle5">9</p>
+			</div>
+			<div id="g-ai0-14" class="g-lg g-aiAbs g-aiPointText" style="top:31.8255%;margin-top:-6.9px;left:38.5353%;width:33px;">
+				<p class="g-pstyle5">27</p>
+			</div>
+			<div id="g-ai0-15" class="g-lg g-aiAbs g-aiPointText" style="top:31.8255%;margin-top:-6.9px;left:27.7861%;width:33px;">
+				<p class="g-pstyle5">18</p>
+			</div>
+			<div id="g-ai0-16" class="g-lg g-aiAbs g-aiPointText" style="top:32.3562%;margin-top:-6.9px;left:65.1022%;width:33px;">
+				<p class="g-pstyle6">50</p>
+			</div>
+			<div id="g-ai0-17" class="g-lg g-aiAbs g-aiPointText" style="top:32.5787%;margin-top:-7.2px;left:9.7732%;width:84px;">
+				<p class="g-pstyle5">Chhattisgarh</p>
+			</div>
+			<div id="g-ai0-18" class="g-lg g-aiAbs g-aiPointText" style="top:35.8941%;margin-top:-6.9px;left:83.8965%;width:57px;">
+				<p class="g-pstyle6">50 days</p>
+			</div>
+			<div id="g-ai0-19" class="g-lg g-aiAbs g-aiPointText" style="top:40.8471%;margin-top:-12.9px;left:84.762%;width:43px;">
+				<p class="g-pstyle5">15 </p>
+				<p class="g-pstyle5">days</p>
+			</div>
+			<div id="g-ai0-20" class="g-lg g-aiAbs g-aiPointText" style="top:45.4919%;margin-top:-13.2px;left:10.5883%;margin-left:-35.5px;width:71px;">
+				<p class="g-pstyle7">Arunachal</p>
+				<p class="g-pstyle7">Pradesh</p>
+			</div>
+			<div id="g-ai0-21" class="g-lg g-aiAbs g-aiPointText" style="top:45.6687%;margin-top:-13.2px;left:18.6746%;margin-left:-27.5px;width:55px;">
+				<p class="g-pstyle7">West</p>
+				<p class="g-pstyle7">Bengal</p>
+			</div>
+			<div id="g-ai0-22" class="g-lg g-aiAbs g-aiPointText" style="top:45.1381%;margin-top:-7.2px;left:23.8864%;width:55px;">
+				<p class="g-pstyle5">Assam</p>
+			</div>
+			<div id="g-ai0-23" class="g-lg g-aiAbs g-aiPointText" style="top:45.6232%;margin-top:-6.9px;left:84.6459%;width:46px;">
+				<p class="g-pstyle5">1 day</p>
+			</div>
+			<div id="g-ai0-24" class="g-lg g-aiAbs g-aiPointText" style="top:46.7301%;margin-top:-7.2px;left:29.1883%;width:73px;">
+				<p class="g-pstyle5">Jharkhand</p>
+			</div>
+			<div id="g-ai0-25" class="g-lg g-aiAbs g-aiPointText" style="top:46.907%;margin-top:-7.2px;left:20.9659%;width:48px;">
+				<p class="g-pstyle5">Bihar</p>
+			</div>
+			<div id="g-ai0-26" class="g-lg g-aiAbs g-aiPointText" style="top:48.8529%;margin-top:-13.2px;right:92.6744%;width:73px;">
+				<p class="g-pstyle8">East and </p>
+				<p class="g-pstyle8">North East</p>
+			</div>
+			<div id="g-ai0-27" class="g-lg g-aiAbs g-aiPointText" style="top:48.6304%;margin-top:-6.9px;left:21.2986%;width:33px;">
+				<p class="g-pstyle5">12</p>
+			</div>
+			<div id="g-ai0-28" class="g-lg g-aiAbs g-aiPointText" style="top:48.6304%;margin-top:-6.9px;left:25.085%;width:33px;">
+				<p class="g-pstyle5">16</p>
+			</div>
+			<div id="g-ai0-29" class="g-lg g-aiAbs g-aiPointText" style="top:48.6304%;margin-top:-6.9px;left:29.4007%;width:33px;">
+				<p class="g-pstyle5">19</p>
+			</div>
+			<div id="g-ai0-30" class="g-lg g-aiAbs g-aiPointText" style="top:48.6304%;margin-top:-6.9px;left:17.9633%;width:33px;">
+				<p class="g-pstyle5">10</p>
+			</div>
+			<div id="g-ai0-31" class="g-lg g-aiAbs g-aiPointText" style="top:48.8073%;margin-top:-6.9px;left:11.3633%;width:28px;">
+				<p class="g-pstyle5">4</p>
+			</div>
+			<div id="g-ai0-32" class="g-lg g-aiAbs g-aiPointText" style="top:48.8072%;margin-top:-6.9px;left:13.6522%;width:28px;">
+				<p class="g-pstyle5">5</p>
+			</div>
+			<div id="g-ai0-33" class="g-lg g-aiAbs g-aiPointText" style="top:52.0369%;margin-top:-7.2px;left:12.5208%;width:73px;">
+				<p class="g-pstyle5">Meghalaya</p>
+			</div>
+			<div id="g-ai0-34" class="g-lg g-aiAbs g-aiPointText" style="top:64.5237%;margin-top:-63.8px;left:85.5601%;margin-left:-87.5px;width:175px;">
+				<p class="g-pstyle9">11</p>
+				<p class="g-pstyle10">States/Union Territories </p>
+				<p class="g-pstyle10">recorded extreme weather </p>
+				<p class="g-pstyle10">events on 20 days </p>
+				<p class="g-pstyle10">or more in the first </p>
+				<p class="g-pstyle10">120 days of 2023</p>
+			</div>
+			<div id="g-ai0-35" class="g-lg g-aiAbs g-aiPointText" style="top:63.7118%;margin-top:-13.2px;left:24.2786%;margin-left:-35px;width:70px;">
+				<p class="g-pstyle7">Jammu & </p>
+				<p class="g-pstyle7">Kashmir</p>
+			</div>
+			<div id="g-ai0-36" class="g-lg g-aiAbs g-aiPointText" style="top:64.204%;margin-top:-12px;left:43.8889%;margin-left:-31px;width:62px;">
+				<p class="g-pstyle11">Himachal</p>
+				<p class="g-pstyle11">Pradesh</p>
+			</div>
+			<div id="g-ai0-37" class="g-lg g-aiAbs g-aiPointText" style="top:64.7732%;margin-top:-7.2px;left:11.3192%;width:78px;">
+				<p class="g-pstyle5">Chandigarh</p>
+			</div>
+			<div id="g-ai0-38" class="g-lg g-aiAbs g-aiPointText" style="top:65.8345%;margin-top:-7.2px;left:33.9608%;width:46px;">
+				<p class="g-pstyle5">Delhi</p>
+			</div>
+			<div id="g-ai0-39" class="g-lg g-aiAbs g-aiPointText" style="top:66.3652%;margin-top:-7.2px;left:28.0049%;width:55px;">
+				<p class="g-pstyle5">Punjab</p>
+			</div>
+			<div id="g-ai0-40" class="g-lg g-aiAbs g-aiPointText" style="top:66.5421%;margin-top:-7.2px;left:52.4757%;width:70px;">
+				<p class="g-pstyle6">Rajasthan</p>
+			</div>
+			<div id="g-ai0-41" class="g-lg g-aiAbs g-aiPointText" style="top:67.6034%;margin-top:-13.2px;left:48.9731%;margin-left:-30.5px;width:61px;">
+				<p class="g-pstyle4">Uttar </p>
+				<p class="g-pstyle4">Pradesh</p>
+			</div>
+			<div id="g-ai0-42" class="g-lg g-aiAbs g-aiPointText" style="top:67.0272%;margin-top:-6.9px;left:15.3824%;width:28px;">
+				<p class="g-pstyle5">7</p>
+			</div>
+			<div id="g-ai0-43" class="g-lg g-aiAbs g-aiPointText" style="top:67.2497%;margin-top:-7.2px;left:1.6314%;width:75px;">
+				<p class="g-pstyle5">North West</p>
+			</div>
+			<div id="g-ai0-44" class="g-lg g-aiAbs g-aiPointText" style="top:67.381%;margin-top:-6.9px;left:20.1597%;width:33px;">
+				<p class="g-pstyle5">12</p>
+			</div>
+			<div id="g-ai0-45" class="g-lg g-aiAbs g-aiPointText" style="top:67.381%;margin-top:-6.9px;left:23.6167%;width:33px;">
+				<p class="g-pstyle5">14</p>
+			</div>
+			<div id="g-ai0-46" class="g-lg g-aiAbs g-aiPointText" style="top:67.381%;margin-top:-6.9px;left:43.272%;width:33px;">
+				<p class="g-pstyle6">30</p>
+			</div>
+			<div id="g-ai0-47" class="g-lg g-aiAbs g-aiPointText" style="top:67.9116%;margin-top:-6.9px;left:34.5429%;width:33px;">
+				<p class="g-pstyle5">25</p>
+			</div>
+			<div id="g-ai0-48" class="g-lg g-aiAbs g-aiPointText" style="top:68.4423%;margin-top:-6.9px;left:29.0309%;width:33px;">
+				<p class="g-pstyle5">19</p>
+			</div>
+			<div id="g-ai0-49" class="g-lg g-aiAbs g-aiPointText" style="top:68.4423%;margin-top:-6.9px;left:54.1843%;width:33px;">
+				<p class="g-pstyle6">38</p>
+			</div>
+			<div id="g-ai0-50" class="g-lg g-aiAbs g-aiPointText" style="top:69.3724%;margin-top:-7.2px;left:37.6989%;width:61px;">
+				<p class="g-pstyle5">Haryana</p>
+			</div>
+			<div id="g-ai0-51" class="g-lg g-aiAbs g-aiPointText" style="top:70.565%;margin-top:-6.9px;left:48.3983%;width:33px;">
+				<p class="g-pstyle6">37</p>
+			</div>
+			<div id="g-ai0-52" class="g-lg g-aiAbs g-aiPointText" style="top:70.7875%;margin-top:-7.2px;left:15.5986%;width:80px;">
+				<p class="g-pstyle5">Uttarakhand</p>
+			</div>
+			<div id="g-ai0-53" class="g-lg g-aiAbs g-aiPointText" style="top:71.4495%;margin-top:-6.9px;left:39.1935%;width:33px;">
+				<p class="g-pstyle5">29</p>
+			</div>
+			<div id="g-ai0-54" class="g-lg g-aiAbs g-aiPointText" style="top:82.9931%;margin-top:-7.2px;left:7.7451%;width:75px;">
+				<p class="g-pstyle5">Tamil Nadu</p>
+			</div>
+			<div id="g-ai0-55" class="g-lg g-aiAbs g-aiPointText" style="top:82.9931%;margin-top:-7.2px;left:14.5319%;width:71px;">
+				<p class="g-pstyle5">Telangana</p>
+			</div>
+			<div id="g-ai0-56" class="g-lg g-aiAbs g-aiPointText" style="top:86.0003%;margin-top:-13.2px;right:92.7809%;width:69px;">
+				<p class="g-pstyle8">South </p>
+				<p class="g-pstyle8">Peninsula</p>
+			</div>
+			<div id="g-ai0-57" class="g-lg g-aiAbs g-aiPointText" style="top:85.0703%;margin-top:-6.9px;left:8.9287%;width:28px;">
+				<p class="g-pstyle5">1</p>
+			</div>
+			<div id="g-ai0-58" class="g-lg g-aiAbs g-aiPointText" style="top:85.601%;margin-top:-6.9px;left:14.3591%;width:28px;">
+				<p class="g-pstyle5">6</p>
+			</div>
+			<div id="g-ai0-59" class="g-lg g-aiAbs g-aiPointText" style="top:85.7779%;margin-top:-6.9px;left:11.9153%;width:28px;">
+				<p class="g-pstyle5">4</p>
+			</div>
+			<div id="g-ai0-60" class="g-lg g-aiAbs g-aiPointText" style="top:86.3085%;margin-top:-6.9px;left:8.0238%;width:28px;">
+				<p class="g-pstyle5">1</p>
+			</div>
+			<div id="g-ai0-61" class="g-lg g-aiAbs g-aiPointText" style="top:90.4801%;margin-top:-22.5px;right:7.4991%;width:215px;">
+				<p class="g-pstyle12"><span class="g-cstyle1">Source: </span>India&rsquo;s Atlas on Extreme </p>
+				<p class="g-pstyle12">Weather Events, </p>
+				<p class="g-pstyle12">Centre for Science and Environment</p>
+			</div>
+			<div id="g-ai0-62" class="g-lg g-aiAbs g-aiPointText" style="top:88.2999%;margin-top:-7.2px;left:11.7392%;width:70px;">
+				<p class="g-pstyle5">Karnataka</p>
+			</div>
+			<div id="g-ai0-63" class="g-lg g-aiAbs g-aiPointText" style="top:88.6537%;margin-top:-7.2px;left:7.7933%;width:53px;">
+				<p class="g-pstyle5">Kerala</p>
+			</div>
+			<div id="g-ai0-64" class="g-lg g-aiAbs g-aiPointText" style="top:92.9386%;margin-top:-8.4px;left:35.1689%;width:310px;">
+				<p class="g-pstyle13">Days with extreme weather events (Jan-April 2022)</p>
+			</div>
+			<div id="g-ai0-65" class="g-lg g-aiAbs g-aiPointText" style="top:96.6988%;margin-top:-5.7px;left:7.352%;width:26px;">
+				<p class="g-pstyle14">0</p>
+			</div>
+			<div id="g-ai0-66" class="g-lg g-aiAbs g-aiPointText" style="top:96.6988%;margin-top:-5.7px;left:36.2753%;width:31px;">
+				<p class="g-pstyle14">25</p>
+			</div>
+			<div id="g-ai0-67" class="g-lg g-aiAbs g-aiPointText" style="top:96.6988%;margin-top:-5.7px;left:65.4285%;width:31px;">
+				<p class="g-pstyle14">50</p>
+			</div>
+		</div>
+
+		<!-- Artboard: xs -->
+		<div id="g-2022_four_month-xs" class="g-artboard" style="max-width: 330px;max-height: 620px" data-aspect-ratio="0.532" data-min-width="0" data-max-width="509">
+	<div style="padding: 0 0 187.8788% 0;"></div>
+			<img id="g-2022_four_month-xs-img" class="g-2022_four_month-xs-img g-aiImg" alt="" src="ai2html/images/2022_four_month-xs.png"/>
+			<div id="g-ai1-1" class="g-md g-aiAbs g-aiPointText" style="top:6.0837%;margin-top:-25.7px;left:2.2298%;width:334px;">
+				<p class="g-pstyle0">Extreme concerns</p>
+			</div>
+			<div id="g-ai1-2" class="g-md g-aiAbs g-aiPointText" style="top:15.0549%;margin-top:-35.3px;left:1.9759%;width:342px;">
+				<p class="g-pstyle1">In the first four months of 2022, at least </p>
+				<p class="g-pstyle1"><span class="g-cstyle0">27 states/UTs</span> recorded extreme weather events.</p>
+				<p class="g-pstyle2">North west<span class="g-cstyle1"> remained the </span>worst affected region </p>
+				<p class="g-pstyle1">owing to heatwave spells</p>
+			</div>
+			<div id="g-ai1-3" class="g-md g-aiAbs g-aiPointText" style="top:35.13%;margin-top:-22.8px;right:66.333%;width:131px;">
+				<p class="g-pstyle3">Days with extreme </p>
+				<p class="g-pstyle3">weather events </p>
+				<p class="g-pstyle3">(Jan-April 2022)</p>
+			</div>
+			<div id="g-ai1-4" class="g-md g-aiAbs g-aiPointText" style="top:40.156%;margin-top:-53px;left:75.7414%;margin-left:-74.5px;width:149px;">
+				<p class="g-pstyle4">11</p>
+				<p class="g-pstyle5">States/Union Territories </p>
+				<p class="g-pstyle5">recorded extreme weather </p>
+				<p class="g-pstyle5">events on 20 days </p>
+				<p class="g-pstyle5">or more in the first </p>
+				<p class="g-pstyle5">120 days of 2023</p>
+			</div>
+			<div id="g-ai1-5" class="g-md g-aiAbs g-aiPointText" style="top:41.2967%;margin-top:-5px;left:14.9241%;width:49px;">
+				<p class="g-pstyle6">50 days</p>
+			</div>
+			<div id="g-ai1-6" class="g-md g-aiAbs g-aiPointText" style="top:44.7813%;margin-top:-9.6px;left:16.7964%;width:38px;">
+				<p class="g-pstyle7">15 </p>
+				<p class="g-pstyle7">days</p>
+			</div>
+			<div id="g-ai1-7" class="g-md g-aiAbs g-aiPointText" style="top:48.0709%;margin-top:-5px;left:16.5452%;width:41px;">
+				<p class="g-pstyle7">1 day</p>
+			</div>
+			<div id="g-ai1-8" class="g-xs g-aiAbs g-aiPointText" style="top:58.7663%;margin-top:-3.4px;left:13.8441%;width:38px;">
+				<p class="g-pstyle8">Region</p>
+			</div>
+			<div id="g-ai1-9" class="g-xs g-aiAbs g-aiPointText" style="top:62.0571%;margin-top:-8.8px;left:94.3898%;margin-left:-23.5px;width:47px;">
+				<p class="g-pstyle9">Madhya </p>
+				<p class="g-pstyle9">Pradesh</p>
+			</div>
+			<div id="g-ai1-10" class="g-xs g-aiAbs g-aiPointText" style="top:61.6019%;margin-top:-4.9px;left:25.6368%;width:44px;">
+				<p class="g-pstyle10">Odisha</p>
+			</div>
+			<div id="g-ai1-11" class="g-xs g-aiAbs g-aiPointText" style="top:61.7632%;margin-top:-4.9px;left:15.5381%;width:34px;">
+				<p class="g-pstyle10">Goa</p>
+			</div>
+			<div id="g-ai1-12" class="g-xs g-aiAbs g-aiPointText" style="top:61.9245%;margin-top:-4.9px;left:39.8578%;width:44px;">
+				<p class="g-pstyle10">Gujarat</p>
+			</div>
+			<div id="g-ai1-13" class="g-xs g-aiAbs g-aiPointText" style="top:61.9245%;margin-top:-4.9px;left:53.8463%;width:60px;">
+				<p class="g-pstyle10">Maharashtra</p>
+			</div>
+			<div id="g-ai1-14" class="g-xs g-aiAbs g-aiPointText" style="top:62.3414%;margin-top:-6.5px;left:3.4267%;width:53px;">
+				<p class="g-pstyle11">Central</p>
+			</div>
+			<div id="g-ai1-15" class="g-xs g-aiAbs g-aiPointText" style="top:62.3819%;margin-top:-4.8px;left:16.3481%;width:26px;">
+				<p class="g-pstyle10">2</p>
+			</div>
+			<div id="g-ai1-16" class="g-xs g-aiAbs g-aiPointText" style="top:62.5432%;margin-top:-4.8px;left:21.1087%;width:26px;">
+				<p class="g-pstyle10">5</p>
+			</div>
+			<div id="g-ai1-17" class="g-xs g-aiAbs g-aiPointText" style="top:62.7044%;margin-top:-4.8px;left:27.6548%;width:26px;">
+				<p class="g-pstyle10">9</p>
+			</div>
+			<div id="g-ai1-18" class="g-xs g-aiAbs g-aiPointText" style="top:63.027%;margin-top:-4.8px;left:57.0338%;width:29px;">
+				<p class="g-pstyle10">27</p>
+			</div>
+			<div id="g-ai1-19" class="g-xs g-aiAbs g-aiPointText" style="top:63.027%;margin-top:-4.8px;left:41.8734%;width:29px;">
+				<p class="g-pstyle10">18</p>
+			</div>
+			<div id="g-ai1-20" class="g-xs g-aiAbs g-aiPointText" style="top:63.6722%;margin-top:-4.8px;left:93.291%;width:29px;">
+				<p class="g-pstyle12">50</p>
+			</div>
+			<div id="g-ai1-21" class="g-xs g-aiAbs g-aiPointText" style="top:64.0212%;margin-top:-4.9px;left:15.944%;width:61px;">
+				<p class="g-pstyle10">Chhattisgarh</p>
+			</div>
+			<div id="g-ai1-22" class="g-xs g-aiAbs g-aiPointText" style="top:68.8313%;margin-top:-8.8px;left:28.1441%;margin-left:-21.5px;width:43px;">
+				<p class="g-pstyle13">West</p>
+				<p class="g-pstyle13">Bengal</p>
+			</div>
+			<div id="g-ai1-23" class="g-xs g-aiAbs g-aiPointText" style="top:68.9926%;margin-top:-8.8px;left:18.2718%;margin-left:-26.5px;width:53px;">
+				<p class="g-pstyle13">Arunachal</p>
+				<p class="g-pstyle13">Pradesh</p>
+			</div>
+			<div id="g-ai1-24" class="g-xs g-aiAbs g-aiPointText" style="top:69.1825%;margin-top:-4.9px;left:36.3731%;width:43px;">
+				<p class="g-pstyle10">Assam</p>
+			</div>
+			<div id="g-ai1-25" class="g-xs g-aiAbs g-aiPointText" style="top:69.8277%;margin-top:-4.9px;left:43.8793%;width:54px;">
+				<p class="g-pstyle10">Jharkhand</p>
+			</div>
+			<div id="g-ai1-26" class="g-xs g-aiAbs g-aiPointText" style="top:69.989%;margin-top:-4.9px;left:31.7213%;width:38px;">
+				<p class="g-pstyle10">Bihar</p>
+			</div>
+			<div id="g-ai1-27" class="g-xs g-aiAbs g-aiPointText" style="top:71.1096%;margin-top:-11.9px;right:87.4461%;width:50px;">
+				<p class="g-pstyle14">East &</p>
+				<p class="g-pstyle14">N-East</p>
+			</div>
+			<div id="g-ai1-28" class="g-xs g-aiAbs g-aiPointText" style="top:70.6077%;margin-top:-4.8px;left:38.0636%;width:29px;">
+				<p class="g-pstyle10">16</p>
+			</div>
+			<div id="g-ai1-29" class="g-xs g-aiAbs g-aiPointText" style="top:70.769%;margin-top:-4.8px;left:28.0195%;width:29px;">
+				<p class="g-pstyle10">10</p>
+			</div>
+			<div id="g-ai1-30" class="g-xs g-aiAbs g-aiPointText" style="top:70.769%;margin-top:-4.8px;left:18.7108%;width:26px;">
+				<p class="g-pstyle10">4</p>
+			</div>
+			<div id="g-ai1-31" class="g-xs g-aiAbs g-aiPointText" style="top:70.769%;margin-top:-4.8px;left:21.9389%;width:26px;">
+				<p class="g-pstyle10">5</p>
+			</div>
+			<div id="g-ai1-32" class="g-xs g-aiAbs g-aiPointText" style="top:70.769%;margin-top:-4.8px;left:44.0748%;width:29px;">
+				<p class="g-pstyle10">19</p>
+			</div>
+			<div id="g-ai1-33" class="g-xs g-aiAbs g-aiPointText" style="top:70.9303%;margin-top:-4.8px;left:32.6382%;width:29px;">
+				<p class="g-pstyle10">12</p>
+			</div>
+			<div id="g-ai1-34" class="g-xs g-aiAbs g-aiPointText" style="top:72.247%;margin-top:-4.9px;left:20.3434%;width:55px;">
+				<p class="g-pstyle10">Meghalaya</p>
+			</div>
+			<div id="g-ai1-35" class="g-xs g-aiAbs g-aiPointText" style="top:74.8664%;margin-top:-13.2px;left:64.5157%;margin-left:-33px;width:66px;">
+				<p class="g-pstyle5">Himachal</p>
+				<p class="g-pstyle5">Pradesh</p>
+			</div>
+			<div id="g-ai1-36" class="g-xs g-aiAbs g-aiPointText" style="top:75.6729%;margin-top:-7.2px;left:74.933%;width:70px;">
+				<p class="g-pstyle15">Rajasthan</p>
+			</div>
+			<div id="g-ai1-37" class="g-xs g-aiAbs g-aiPointText" style="top:76.8019%;margin-top:-7.2px;left:41.4536%;width:55px;">
+				<p class="g-pstyle15">Punjab</p>
+			</div>
+			<div id="g-ai1-38" class="g-xs g-aiAbs g-aiPointText" style="top:77.2858%;margin-top:-7.2px;left:13.5611%;width:78px;">
+				<p class="g-pstyle15">Chandigarh</p>
+			</div>
+			<div id="g-ai1-39" class="g-xs g-aiAbs g-aiPointText" style="top:77.2858%;margin-top:-7.2px;left:37.2177%;margin-left:-21px;width:42px;">
+				<p class="g-pstyle5">J&K</p>
+			</div>
+			<div id="g-ai1-40" class="g-xs g-aiAbs g-aiPointText" style="top:77.8894%;margin-top:-6.9px;left:63.1497%;width:33px;">
+				<p class="g-pstyle15">30</p>
+			</div>
+			<div id="g-ai1-41" class="g-xs g-aiAbs g-aiPointText" style="top:78.8987%;margin-top:-7.2px;left:71.834%;margin-left:-18px;width:36px;">
+				<p class="g-pstyle16">UP</p>
+			</div>
+			<div id="g-ai1-42" class="g-xs g-aiAbs g-aiPointText" style="top:78.8572%;margin-top:-6.9px;left:24.2418%;width:28px;">
+				<p class="g-pstyle15">7</p>
+			</div>
+			<div id="g-ai1-43" class="g-xs g-aiAbs g-aiPointText" style="top:79.8193%;margin-top:-11.9px;right:87.2643%;width:46px;">
+				<p class="g-pstyle14">North</p>
+				<p class="g-pstyle14">West</p>
+			</div>
+			<div id="g-ai1-44" class="g-xs g-aiAbs g-aiPointText" style="top:79.0184%;margin-top:-6.9px;left:50.6642%;width:33px;">
+				<p class="g-pstyle15">25</p>
+			</div>
+			<div id="g-ai1-45" class="g-xs g-aiAbs g-aiPointText" style="top:79.0184%;margin-top:-6.9px;left:78.3968%;width:33px;">
+				<p class="g-pstyle17">38</p>
+			</div>
+			<div id="g-ai1-46" class="g-xs g-aiAbs g-aiPointText" style="top:79.1797%;margin-top:-6.9px;left:35.5531%;width:33px;">
+				<p class="g-pstyle15">14</p>
+			</div>
+			<div id="g-ai1-47" class="g-xs g-aiAbs g-aiPointText" style="top:79.3411%;margin-top:-6.9px;left:42.8184%;width:33px;">
+				<p class="g-pstyle15">19</p>
+			</div>
+			<div id="g-ai1-48" class="g-xs g-aiAbs g-aiPointText" style="top:79.341%;margin-top:-6.9px;left:30.3965%;width:33px;">
+				<p class="g-pstyle15">12</p>
+			</div>
+			<div id="g-ai1-49" class="g-xs g-aiAbs g-aiPointText" style="top:80.6313%;margin-top:-6.9px;left:57.3374%;width:33px;">
+				<p class="g-pstyle15">29</p>
+			</div>
+			<div id="g-ai1-50" class="g-xs g-aiAbs g-aiPointText" style="top:80.6314%;margin-top:-6.9px;left:69.934%;width:33px;">
+				<p class="g-pstyle17">37</p>
+			</div>
+			<div id="g-ai1-51" class="g-xs g-aiAbs g-aiPointText" style="top:81.1568%;margin-top:-7.2px;left:23.4446%;width:80px;">
+				<p class="g-pstyle15">Uttarakhand</p>
+			</div>
+			<div id="g-ai1-52" class="g-xs g-aiAbs g-aiPointText" style="top:81.318%;margin-top:-7.2px;left:46.3406%;width:46px;">
+				<p class="g-pstyle15">Delhi</p>
+			</div>
+			<div id="g-ai1-53" class="g-xs g-aiAbs g-aiPointText" style="top:81.8019%;margin-top:-7.2px;left:55.2291%;width:61px;">
+				<p class="g-pstyle15">Haryana</p>
+			</div>
+			<div id="g-ai1-54" class="g-xs g-aiAbs g-aiPointText" style="top:86.4793%;margin-top:-7.2px;left:22.1308%;width:71px;">
+				<p class="g-pstyle15">Telangana</p>
+			</div>
+			<div id="g-ai1-55" class="g-xs g-aiAbs g-aiPointText" style="top:88.0451%;margin-top:-11.9px;right:87.0222%;width:64px;">
+				<p class="g-pstyle14">South </p>
+				<p class="g-pstyle14">Peninsula</p>
+			</div>
+			<div id="g-ai1-56" class="g-xs g-aiAbs g-aiPointText" style="top:87.7281%;margin-top:-6.9px;left:22.3079%;width:28px;">
+				<p class="g-pstyle15">6</p>
+			</div>
+			<div id="g-ai1-57" class="g-xs g-aiAbs g-aiPointText" style="top:88.0507%;margin-top:-6.9px;left:19.2177%;width:28px;">
+				<p class="g-pstyle15">4</p>
+			</div>
+			<div id="g-ai1-58" class="g-xs g-aiAbs g-aiPointText" style="top:89.3826%;margin-top:-7.2px;left:19.4855%;width:70px;">
+				<p class="g-pstyle15">Karnataka</p>
+			</div>
+			<div id="g-ai1-59" class="g-xs g-aiAbs g-aiPointText" style="top:90.9522%;margin-top:-5.9px;left:38.5923%;width:213px;">
+				<p class="g-pstyle18">Days with extreme weather events (Jan-April 2022)</p>
+			</div>
+			<div id="g-ai1-60" class="g-xs g-aiAbs g-aiPointText" style="top:92.7545%;margin-top:-3.1px;left:13.0535%;width:24px;">
+				<p class="g-pstyle19">0</p>
+			</div>
+			<div id="g-ai1-61" class="g-xs g-aiAbs g-aiPointText" style="top:92.7545%;margin-top:-3.1px;left:53.8463%;width:26px;">
+				<p class="g-pstyle19">25</p>
+			</div>
+			<div id="g-ai1-62" class="g-xs g-aiAbs g-aiPointText" style="top:92.7545%;margin-top:-3.1px;left:94.9635%;width:26px;">
+				<p class="g-pstyle19">50</p>
+			</div>
+			<div id="g-ai1-63" class="g-xs g-aiAbs g-aiPointText" style="top:95.6004%;margin-top:-11.7px;right:3.7188%;width:226px;">
+				<p class="g-pstyle14"><span class="g-cstyle2">Source: </span>India&rsquo;s Atlas on Extreme Weather Events, </p>
+				<p class="g-pstyle14">Centre for Science and Environment</p>
+			</div>
+		</div>
+
+		<!-- Artboard: sm -->
+		<div id="g-2022_four_month-sm" class="g-artboard" style="width:510px; height:682.299056594781px;" data-aspect-ratio="0.747" data-min-width="510" data-max-width="659">
+	<div style=""></div>
+			<img id="g-2022_four_month-sm-img" class="g-2022_four_month-sm-img g-aiImg" alt="" src="ai2html/images/2022_four_month-sm.png"/>
+			<div id="g-ai2-1" class="g-sm g-aiAbs g-aiPointText" style="top:6.7007%;margin-top:-25.7px;left:3.38%;width:334px;">
+				<p class="g-pstyle0">Extreme concerns</p>
+			</div>
+			<div id="g-ai2-2" class="g-sm g-aiAbs g-aiPointText" style="top:13.6217%;margin-top:-26.9px;left:3.2157%;width:501px;">
+				<p class="g-pstyle1">In the first four months of 2022, at least <span class="g-cstyle0">27 states/UTs</span> recorded </p>
+				<p class="g-pstyle1">extreme weather events. <span class="g-cstyle0">North west</span> remained the <span class="g-cstyle0">worst affected region </span></p>
+				<p class="g-pstyle1">owing to heatwave spells</p>
+			</div>
+			<div id="g-ai2-3" class="g-sm g-aiAbs g-aiPointText" style="top:26.4995%;margin-top:-22.8px;right:57.52%;width:131px;">
+				<p class="g-pstyle2">Days with extreme </p>
+				<p class="g-pstyle2">weather events </p>
+				<p class="g-pstyle2">(Jan-April 2022)</p>
+			</div>
+			<div id="g-ai2-4" class="g-md g-aiAbs g-aiPointText" style="top:31.0667%;margin-top:-53px;left:70.097%;margin-left:-74.5px;width:149px;">
+				<p class="g-pstyle3">11</p>
+				<p class="g-pstyle4">States/Union Territories </p>
+				<p class="g-pstyle4">recorded extreme weather </p>
+				<p class="g-pstyle4">events on 20 days </p>
+				<p class="g-pstyle4">or more in the first </p>
+				<p class="g-pstyle4">120 days of 2023</p>
+			</div>
+			<div id="g-ai2-5" class="g-sm g-aiAbs g-aiPointText" style="top:32.1031%;margin-top:-5px;left:30.7446%;width:49px;">
+				<p class="g-pstyle5">50 days</p>
+			</div>
+			<div id="g-ai2-6" class="g-sm g-aiAbs g-aiPointText" style="top:35.2697%;margin-top:-9.6px;left:31.9561%;width:38px;">
+				<p class="g-pstyle6">15 </p>
+				<p class="g-pstyle6">days</p>
+			</div>
+			<div id="g-ai2-7" class="g-sm g-aiAbs g-aiPointText" style="top:38.4053%;margin-top:-5px;left:31.7935%;width:41px;">
+				<p class="g-pstyle6">1 day</p>
+			</div>
+			<div id="g-ai2-8" class="g-sm g-aiAbs g-aiPointText" style="top:44.4783%;margin-top:-5.5px;left:10.6961%;width:47px;">
+				<p class="g-pstyle7">Region</p>
+			</div>
+			<div id="g-ai2-9" class="g-sm g-aiAbs g-aiPointText" style="top:49.1239%;margin-top:-13.2px;left:93.8125%;margin-left:-31px;width:62px;">
+				<p class="g-pstyle8">Madhya </p>
+				<p class="g-pstyle8">Pradesh</p>
+			</div>
+			<div id="g-ai2-10" class="g-sm g-aiAbs g-aiPointText" style="top:48.6842%;margin-top:-7.2px;left:22.6742%;width:56px;">
+				<p class="g-pstyle9">Odisha</p>
+			</div>
+			<div id="g-ai2-11" class="g-sm g-aiAbs g-aiPointText" style="top:48.6842%;margin-top:-7.2px;left:12.4168%;width:41px;">
+				<p class="g-pstyle9">Goa</p>
+			</div>
+			<div id="g-ai2-12" class="g-sm g-aiAbs g-aiPointText" style="top:48.8308%;margin-top:-7.2px;left:37.1187%;width:57px;">
+				<p class="g-pstyle9">Gujarat</p>
+			</div>
+			<div id="g-ai2-13" class="g-sm g-aiAbs g-aiPointText" style="top:48.8308%;margin-top:-7.2px;left:51.3269%;width:81px;">
+				<p class="g-pstyle9">Maharashtra</p>
+			</div>
+			<div id="g-ai2-14" class="g-sm g-aiAbs g-aiPointText" style="top:49.7101%;margin-top:-7.2px;left:3.172%;width:56px;">
+				<p class="g-pstyle9">Central</p>
+			</div>
+			<div id="g-ai2-15" class="g-sm g-aiAbs g-aiPointText" style="top:49.6724%;margin-top:-6.9px;left:13.2394%;width:28px;">
+				<p class="g-pstyle9">2</p>
+			</div>
+			<div id="g-ai2-16" class="g-sm g-aiAbs g-aiPointText" style="top:49.8189%;margin-top:-6.9px;left:18.0747%;width:28px;">
+				<p class="g-pstyle9">5</p>
+			</div>
+			<div id="g-ai2-17" class="g-sm g-aiAbs g-aiPointText" style="top:50.1121%;margin-top:-6.9px;left:24.7238%;width:28px;">
+				<p class="g-pstyle9">9</p>
+			</div>
+			<div id="g-ai2-18" class="g-sm g-aiAbs g-aiPointText" style="top:50.5518%;margin-top:-6.9px;left:54.5643%;width:33px;">
+				<p class="g-pstyle9">27</p>
+			</div>
+			<div id="g-ai2-19" class="g-sm g-aiAbs g-aiPointText" style="top:50.5518%;margin-top:-6.9px;left:39.1656%;width:33px;">
+				<p class="g-pstyle9">18</p>
+			</div>
+			<div id="g-ai2-20" class="g-sm g-aiAbs g-aiPointText" style="top:51.4311%;margin-top:-6.9px;left:92.6225%;width:33px;">
+				<p class="g-pstyle10">50</p>
+			</div>
+			<div id="g-ai2-21" class="g-sm g-aiAbs g-aiPointText" style="top:51.9086%;margin-top:-7.2px;left:12.8289%;width:84px;">
+				<p class="g-pstyle9">Chhattisgarh</p>
+			</div>
+			<div id="g-ai2-22" class="g-sm g-aiAbs g-aiPointText" style="top:58.7971%;margin-top:-13.2px;left:25.2241%;margin-left:-27.5px;width:55px;">
+				<p class="g-pstyle4">West</p>
+				<p class="g-pstyle4">Bengal</p>
+			</div>
+			<div id="g-ai2-23" class="g-sm g-aiAbs g-aiPointText" style="top:59.0902%;margin-top:-13.2px;left:15.2266%;margin-left:-35.5px;width:71px;">
+				<p class="g-pstyle4">Arunachal</p>
+				<p class="g-pstyle4">Pradesh</p>
+			</div>
+			<div id="g-ai2-24" class="g-sm g-aiAbs g-aiPointText" style="top:59.2368%;margin-top:-7.2px;left:33.5791%;width:55px;">
+				<p class="g-pstyle9">Assam</p>
+			</div>
+			<div id="g-ai2-25" class="g-sm g-aiAbs g-aiPointText" style="top:60.2627%;margin-top:-7.2px;left:41.2032%;width:73px;">
+				<p class="g-pstyle9">Jharkhand</p>
+			</div>
+			<div id="g-ai2-26" class="g-sm g-aiAbs g-aiPointText" style="top:60.4093%;margin-top:-7.2px;left:28.8541%;width:48px;">
+				<p class="g-pstyle9">Bihar</p>
+			</div>
+			<div id="g-ai2-27" class="g-sm g-aiAbs g-aiPointText" style="top:61.8749%;margin-top:-13.2px;right:90.1489%;width:54px;">
+				<p class="g-pstyle11">East &</p>
+				<p class="g-pstyle11">N-East</p>
+			</div>
+			<div id="g-ai2-28" class="g-sm g-aiAbs g-aiPointText" style="top:61.3974%;margin-top:-6.9px;left:35.2961%;width:33px;">
+				<p class="g-pstyle9">16</p>
+			</div>
+			<div id="g-ai2-29" class="g-sm g-aiAbs g-aiPointText" style="top:61.5441%;margin-top:-6.9px;left:25.0941%;width:33px;">
+				<p class="g-pstyle9">10</p>
+			</div>
+			<div id="g-ai2-30" class="g-sm g-aiAbs g-aiPointText" style="top:61.5441%;margin-top:-6.9px;left:15.6393%;width:28px;">
+				<p class="g-pstyle9">4</p>
+			</div>
+			<div id="g-ai2-31" class="g-sm g-aiAbs g-aiPointText" style="top:61.5441%;margin-top:-6.9px;left:18.9182%;width:28px;">
+				<p class="g-pstyle9">5</p>
+			</div>
+			<div id="g-ai2-32" class="g-sm g-aiAbs g-aiPointText" style="top:61.6906%;margin-top:-6.9px;left:41.4018%;width:33px;">
+				<p class="g-pstyle9">19</p>
+			</div>
+			<div id="g-ai2-33" class="g-sm g-aiAbs g-aiPointText" style="top:61.8371%;margin-top:-6.9px;left:29.7855%;width:33px;">
+				<p class="g-pstyle9">12</p>
+			</div>
+			<div id="g-ai2-34" class="g-sm g-aiAbs g-aiPointText" style="top:63.7802%;margin-top:-7.2px;left:17.2973%;width:73px;">
+				<p class="g-pstyle9">Meghalaya</p>
+			</div>
+			<div id="g-ai2-35" class="g-sm g-aiAbs g-aiPointText" style="top:69.4962%;margin-top:-13.2px;left:62.5164%;margin-left:-33px;width:66px;">
+				<p class="g-pstyle4">Himachal</p>
+				<p class="g-pstyle4">Pradesh</p>
+			</div>
+			<div id="g-ai2-36" class="g-sm g-aiAbs g-aiPointText" style="top:71.1084%;margin-top:-13.2px;left:34.7305%;margin-left:-35px;width:70px;">
+				<p class="g-pstyle4">Jammu & </p>
+				<p class="g-pstyle4">Kashmir</p>
+			</div>
+			<div id="g-ai2-37" class="g-sm g-aiAbs g-aiPointText" style="top:71.6946%;margin-top:-7.2px;left:15.5811%;width:78px;">
+				<p class="g-pstyle9">Chandigarh</p>
+			</div>
+			<div id="g-ai2-38" class="g-sm g-aiAbs g-aiPointText" style="top:71.9501%;margin-top:-6.9px;left:61.311%;width:33px;">
+				<p class="g-pstyle9">30</p>
+			</div>
+			<div id="g-ai2-39" class="g-sm g-aiAbs g-aiPointText" style="top:72.7206%;margin-top:-7.2px;left:47.4986%;width:46px;">
+				<p class="g-pstyle9">Delhi</p>
+			</div>
+			<div id="g-ai2-40" class="g-sm g-aiAbs g-aiPointText" style="top:73.6%;margin-top:-13.2px;left:69.5769%;margin-left:-30.5px;width:61px;">
+				<p class="g-pstyle8">Uttar </p>
+				<p class="g-pstyle8">Pradesh</p>
+			</div>
+			<div id="g-ai2-41" class="g-sm g-aiAbs g-aiPointText" style="top:72.8671%;margin-top:-7.2px;left:39.4274%;width:55px;">
+				<p class="g-pstyle9">Punjab</p>
+			</div>
+			<div id="g-ai2-42" class="g-sm g-aiAbs g-aiPointText" style="top:74.1862%;margin-top:-13.2px;right:90.11%;width:49px;">
+				<p class="g-pstyle11">North</p>
+				<p class="g-pstyle11">West</p>
+			</div>
+			<div id="g-ai2-43" class="g-sm g-aiAbs g-aiPointText" style="top:73.4157%;margin-top:-6.9px;left:21.2572%;width:28px;">
+				<p class="g-pstyle9">7</p>
+			</div>
+			<div id="g-ai2-44" class="g-sm g-aiAbs g-aiPointText" style="top:73.5095%;margin-top:-6.6px;left:73.7716%;width:65px;">
+				<p class="g-pstyle12">Rajasthan</p>
+			</div>
+			<div id="g-ai2-45" class="g-sm g-aiAbs g-aiPointText" style="top:73.7088%;margin-top:-6.9px;left:28.2404%;width:33px;">
+				<p class="g-pstyle9">12</p>
+			</div>
+			<div id="g-ai2-46" class="g-sm g-aiAbs g-aiPointText" style="top:73.7088%;margin-top:-6.9px;left:33.1927%;width:33px;">
+				<p class="g-pstyle9">14</p>
+			</div>
+			<div id="g-ai2-47" class="g-sm g-aiAbs g-aiPointText" style="top:74.1484%;margin-top:-6.9px;left:48.3323%;width:33px;">
+				<p class="g-pstyle9">25</p>
+			</div>
+			<div id="g-ai2-48" class="g-sm g-aiAbs g-aiPointText" style="top:74.4416%;margin-top:-6.9px;left:40.9487%;width:33px;">
+				<p class="g-pstyle9">19</p>
+			</div>
+			<div id="g-ai2-49" class="g-sm g-aiAbs g-aiPointText" style="top:74.7725%;margin-top:-7.2px;left:53.1104%;width:61px;">
+				<p class="g-pstyle9">Haryana</p>
+			</div>
+			<div id="g-ai2-50" class="g-sm g-aiAbs g-aiPointText" style="top:75.0278%;margin-top:-6.9px;left:76.8906%;width:33px;">
+				<p class="g-pstyle10">38</p>
+			</div>
+			<div id="g-ai2-51" class="g-sm g-aiAbs g-aiPointText" style="top:75.7607%;margin-top:-6.9px;left:68.6934%;width:33px;">
+				<p class="g-pstyle10">37</p>
+			</div>
+			<div id="g-ai2-52" class="g-sm g-aiAbs g-aiPointText" style="top:76.0915%;margin-top:-7.2px;left:21.1791%;width:80px;">
+				<p class="g-pstyle9">Uttarakhand</p>
+			</div>
+			<div id="g-ai2-53" class="g-sm g-aiAbs g-aiPointText" style="top:76.347%;margin-top:-6.9px;left:55.2515%;width:33px;">
+				<p class="g-pstyle9">29</p>
+			</div>
+			<div id="g-ai2-54" class="g-sm g-aiAbs g-aiPointText" style="top:82.98%;margin-top:-13.2px;left:11.7265%;width:47px;">
+				<p class="g-pstyle9">Tamil</p>
+				<p class="g-pstyle9">Nadu</p>
+			</div>
+			<div id="g-ai2-55" class="g-sm g-aiAbs g-aiPointText" style="top:83.8594%;margin-top:-7.2px;left:19.3533%;width:71px;">
+				<p class="g-pstyle9">Telangana</p>
+			</div>
+			<div id="g-ai2-56" class="g-sm g-aiAbs g-aiPointText" style="top:86.0578%;margin-top:-13.2px;right:90.1619%;width:69px;">
+				<p class="g-pstyle11">South </p>
+				<p class="g-pstyle11">Peninsula</p>
+			</div>
+			<div id="g-ai2-57" class="g-sm g-aiAbs g-aiPointText" style="top:85.1408%;margin-top:-6.9px;left:12.1516%;width:28px;">
+				<p class="g-pstyle9">1</p>
+			</div>
+			<div id="g-ai2-58" class="g-sm g-aiAbs g-aiPointText" style="top:85.5804%;margin-top:-6.9px;left:19.6007%;width:28px;">
+				<p class="g-pstyle9">6</p>
+			</div>
+			<div id="g-ai2-59" class="g-sm g-aiAbs g-aiPointText" style="top:85.727%;margin-top:-6.9px;left:16.4621%;width:28px;">
+				<p class="g-pstyle9">4</p>
+			</div>
+			<div id="g-ai2-60" class="g-sm g-aiAbs g-aiPointText" style="top:86.1667%;margin-top:-6.9px;left:10.7375%;width:28px;">
+				<p class="g-pstyle9">1</p>
+			</div>
+			<div id="g-ai2-61" class="g-sm g-aiAbs g-aiPointText" style="top:87.67%;margin-top:-7.2px;left:10.4076%;width:53px;">
+				<p class="g-pstyle9">Kerala</p>
+			</div>
+			<div id="g-ai2-62" class="g-sm g-aiAbs g-aiPointText" style="top:87.67%;margin-top:-7.2px;left:16.734%;width:70px;">
+				<p class="g-pstyle9">Karnataka</p>
+			</div>
+			<div id="g-ai2-63" class="g-sm g-aiAbs g-aiPointText" style="top:90.4547%;margin-top:-7.2px;left:46.8378%;width:263px;">
+				<p class="g-pstyle13">Days with extreme weather events (Jan-April 2022)</p>
+			</div>
+			<div id="g-ai2-64" class="g-sm g-aiAbs g-aiPointText" style="top:92.8548%;margin-top:-4.5px;left:9.8929%;width:25px;">
+				<p class="g-pstyle14">0</p>
+			</div>
+			<div id="g-ai2-65" class="g-sm g-aiAbs g-aiPointText" style="top:92.8548%;margin-top:-4.5px;left:51.3267%;width:29px;">
+				<p class="g-pstyle14">25</p>
+			</div>
+			<div id="g-ai2-66" class="g-sm g-aiAbs g-aiPointText" style="top:92.8548%;margin-top:-4.5px;left:93.0899%;width:29px;">
+				<p class="g-pstyle14">50</p>
+			</div>
+			<div id="g-ai2-67" class="g-sm g-aiAbs g-aiPointText" style="top:95.9122%;margin-top:-8.4px;right:3.2788%;width:487px;">
+				<p class="g-pstyle2"><span class="g-cstyle1">Source: </span>India&rsquo;s Atlas on Extreme Weather Events, Centre for Science and Environment</p>
+			</div>
+		</div>
+
+		<!-- Artboard: md -->
+		<div id="g-2022_four_month-md" class="g-artboard" style="width:660px; height:501.571172505618px;" data-aspect-ratio="1.316" data-min-width="660" data-max-width="929">
+	<div style=""></div>
+			<img id="g-2022_four_month-md-img" class="g-2022_four_month-md-img g-aiImg" alt="" src="ai2html/images/2022_four_month-md.png"/>
+			<div id="g-ai3-1" class="g-md g-aiAbs g-aiPointText" style="top:6.7226%;margin-top:-25.7px;left:3.7581%;width:334px;">
+				<p class="g-pstyle0">Extreme concerns</p>
+			</div>
+			<div id="g-ai3-2" class="g-md g-aiAbs g-aiPointText" style="top:14.4627%;margin-top:-18.5px;left:3.6311%;width:611px;">
+				<p class="g-pstyle1">In the first four months of 2022, at least <span class="g-cstyle0">27 states/UTs</span> recorded extreme weather events. </p>
+				<p class="g-pstyle1"><span class="g-cstyle0">North west</span> remained the <span class="g-cstyle0">worst affected region </span>owing to heatwave spells</p>
+			</div>
+			<div id="g-ai3-3" class="g-md g-aiAbs g-aiPointText" style="top:23.7531%;margin-top:-6.1px;left:7.8622%;width:50px;">
+				<p class="g-pstyle2">Region</p>
+			</div>
+			<div id="g-ai3-4" class="g-md g-aiAbs g-aiPointText" style="top:30.9372%;margin-top:-13.2px;left:81.6122%;margin-left:-31px;width:62px;">
+				<p class="g-pstyle3">Madhya </p>
+				<p class="g-pstyle3">Pradesh</p>
+			</div>
+			<div id="g-ai3-5" class="g-md g-aiAbs g-aiPointText" style="top:30.5384%;margin-top:-7.2px;left:9.3887%;width:41px;">
+				<p class="g-pstyle4">Goa</p>
+			</div>
+			<div id="g-ai3-6" class="g-md g-aiAbs g-aiPointText" style="top:30.9372%;margin-top:-7.2px;left:18.5816%;width:56px;">
+				<p class="g-pstyle4">Odisha</p>
+			</div>
+			<div id="g-ai3-7" class="g-md g-aiAbs g-aiPointText" style="top:31.1365%;margin-top:-7.2px;left:31.5786%;width:57px;">
+				<p class="g-pstyle4">Gujarat</p>
+			</div>
+			<div id="g-ai3-8" class="g-md g-aiAbs g-aiPointText" style="top:31.3359%;margin-top:-7.2px;left:43.9139%;width:81px;">
+				<p class="g-pstyle4">Maharashtra</p>
+			</div>
+			<div id="g-ai3-9" class="g-md g-aiAbs g-aiPointText" style="top:32.1334%;margin-top:-7.2px;left:1.8818%;width:56px;">
+				<p class="g-pstyle4">Central</p>
+			</div>
+			<div id="g-ai3-10" class="g-md g-aiAbs g-aiPointText" style="top:32.082%;margin-top:-6.9px;left:10.1186%;width:28px;">
+				<p class="g-pstyle4">2</p>
+			</div>
+			<div id="g-ai3-11" class="g-md g-aiAbs g-aiPointText" style="top:32.2814%;margin-top:-6.9px;left:14.4093%;width:28px;">
+				<p class="g-pstyle4">5</p>
+			</div>
+			<div id="g-ai3-12" class="g-md g-aiAbs g-aiPointText" style="top:32.6802%;margin-top:-6.9px;left:20.309%;width:28px;">
+				<p class="g-pstyle4">9</p>
+			</div>
+			<div id="g-ai3-13" class="g-md g-aiAbs g-aiPointText" style="top:33.2783%;margin-top:-6.9px;left:46.7868%;width:33px;">
+				<p class="g-pstyle4">27</p>
+			</div>
+			<div id="g-ai3-14" class="g-md g-aiAbs g-aiPointText" style="top:33.4777%;margin-top:-6.9px;left:33.1233%;width:33px;">
+				<p class="g-pstyle4">18</p>
+			</div>
+			<div id="g-ai3-15" class="g-md g-aiAbs g-aiPointText" style="top:34.1271%;margin-top:-7.2px;left:10.2269%;width:84px;">
+				<p class="g-pstyle4">Chhattisgarh</p>
+			</div>
+			<div id="g-ai3-16" class="g-md g-aiAbs g-aiPointText" style="top:34.8733%;margin-top:-6.9px;left:80.556%;width:33px;">
+				<p class="g-pstyle5">50</p>
+			</div>
+			<div id="g-ai3-17" class="g-md g-aiAbs g-aiPointText" style="top:47.0403%;margin-top:-26.9px;right:1.5244%;width:149px;">
+				<p class="g-pstyle6">Days with extreme </p>
+				<p class="g-pstyle6">weather events </p>
+				<p class="g-pstyle6">(Jan-April 2022)</p>
+			</div>
+			<div id="g-ai3-18" class="g-md g-aiAbs g-aiPointText" style="top:47.0864%;margin-top:-13.2px;left:20.9568%;margin-left:-27.5px;width:55px;">
+				<p class="g-pstyle7">West</p>
+				<p class="g-pstyle7">Bengal</p>
+			</div>
+			<div id="g-ai3-19" class="g-md g-aiAbs g-aiPointText" style="top:47.4852%;margin-top:-13.2px;left:11.2637%;margin-left:-35.5px;width:71px;">
+				<p class="g-pstyle7">Arunachal</p>
+				<p class="g-pstyle7">Pradesh</p>
+			</div>
+			<div id="g-ai3-20" class="g-md g-aiAbs g-aiPointText" style="top:46.887%;margin-top:-7.2px;left:28.1664%;width:55px;">
+				<p class="g-pstyle4">Assam</p>
+			</div>
+			<div id="g-ai3-21" class="g-md g-aiAbs g-aiPointText" style="top:48.482%;margin-top:-7.2px;left:24.0394%;width:48px;">
+				<p class="g-pstyle4">Bihar</p>
+			</div>
+			<div id="g-ai3-22" class="g-md g-aiAbs g-aiPointText" style="top:48.482%;margin-top:-7.2px;left:34.9313%;width:73px;">
+				<p class="g-pstyle4">Jharkhand</p>
+			</div>
+			<div id="g-ai3-23" class="g-md g-aiAbs g-aiPointText" style="top:50.8745%;margin-top:-13.2px;right:92.895%;width:54px;">
+				<p class="g-pstyle8">East &</p>
+				<p class="g-pstyle8">N-East</p>
+			</div>
+			<div id="g-ai3-24" class="g-md g-aiAbs g-aiPointText" style="top:50.4244%;margin-top:-6.9px;left:24.877%;width:33px;">
+				<p class="g-pstyle4">12</p>
+			</div>
+			<div id="g-ai3-25" class="g-md g-aiAbs g-aiPointText" style="top:50.4244%;margin-top:-6.9px;left:29.69%;width:33px;">
+				<p class="g-pstyle4">16</p>
+			</div>
+			<div id="g-ai3-26" class="g-md g-aiAbs g-aiPointText" style="top:50.4244%;margin-top:-6.9px;left:35.1756%;width:33px;">
+				<p class="g-pstyle4">19</p>
+			</div>
+			<div id="g-ai3-27" class="g-md g-aiAbs g-aiPointText" style="top:50.6238%;margin-top:-6.9px;left:20.6375%;width:33px;">
+				<p class="g-pstyle4">10</p>
+			</div>
+			<div id="g-ai3-28" class="g-md g-aiAbs g-aiPointText" style="top:50.6238%;margin-top:-6.9px;left:12.2481%;width:28px;">
+				<p class="g-pstyle4">4</p>
+			</div>
+			<div id="g-ai3-29" class="g-md g-aiAbs g-aiPointText" style="top:50.6238%;margin-top:-6.9px;left:15.1577%;width:28px;">
+				<p class="g-pstyle4">5</p>
+			</div>
+			<div id="g-ai3-30" class="g-md g-aiAbs g-aiPointText" style="top:54.0645%;margin-top:-7.2px;left:13.7195%;width:73px;">
+				<p class="g-pstyle4">Meghalaya</p>
+			</div>
+			<div id="g-ai3-31" class="g-md g-aiAbs g-aiPointText" style="top:55.01%;margin-top:-6.9px;left:89.9294%;width:57px;">
+				<p class="g-pstyle5">50 days</p>
+			</div>
+			<div id="g-ai3-32" class="g-md g-aiAbs g-aiPointText" style="top:60.5924%;margin-top:-12.9px;left:91.1489%;width:43px;">
+				<p class="g-pstyle4">15 </p>
+				<p class="g-pstyle4">days</p>
+			</div>
+			<div id="g-ai3-33" class="g-md g-aiAbs g-aiPointText" style="top:63.0363%;margin-top:-13.2px;left:53.7976%;margin-left:-33px;width:66px;">
+				<p class="g-pstyle7">Himachal</p>
+				<p class="g-pstyle7">Pradesh</p>
+			</div>
+			<div id="g-ai3-34" class="g-md g-aiAbs g-aiPointText" style="top:66.0269%;margin-top:-13.2px;left:28.6663%;margin-left:-35px;width:70px;">
+				<p class="g-pstyle7">Jammu & </p>
+				<p class="g-pstyle7">Kashmir</p>
+			</div>
+			<div id="g-ai3-35" class="g-md g-aiAbs g-aiPointText" style="top:66.175%;margin-top:-6.9px;left:90.9854%;width:46px;">
+				<p class="g-pstyle4">1 day</p>
+			</div>
+			<div id="g-ai3-36" class="g-md g-aiAbs g-aiPointText" style="top:66.7731%;margin-top:-6.9px;left:52.7731%;width:33px;">
+				<p class="g-pstyle4">30</p>
+			</div>
+			<div id="g-ai3-37" class="g-md g-aiAbs g-aiPointText" style="top:66.8244%;margin-top:-7.2px;left:12.1922%;width:78px;">
+				<p class="g-pstyle4">Chandigarh</p>
+			</div>
+			<div id="g-ai3-38" class="g-md g-aiAbs g-aiPointText" style="top:68.0206%;margin-top:-7.2px;left:40.9721%;width:46px;">
+				<p class="g-pstyle4">Delhi</p>
+			</div>
+			<div id="g-ai3-39" class="g-md g-aiAbs g-aiPointText" style="top:68.4194%;margin-top:-7.2px;left:33.4013%;width:55px;">
+				<p class="g-pstyle4">Punjab</p>
+			</div>
+			<div id="g-ai3-40" class="g-md g-aiAbs g-aiPointText" style="top:68.6188%;margin-top:-7.2px;left:63.9004%;width:70px;">
+				<p class="g-pstyle5">Rajasthan</p>
+			</div>
+			<div id="g-ai3-41" class="g-md g-aiAbs g-aiPointText" style="top:70.0144%;margin-top:-13.2px;left:60.0508%;margin-left:-30.5px;width:61px;">
+				<p class="g-pstyle3">Uttar </p>
+				<p class="g-pstyle3">Pradesh</p>
+			</div>
+			<div id="g-ai3-42" class="g-md g-aiAbs g-aiPointText" style="top:70.2137%;margin-top:-13.2px;right:92.8609%;width:49px;">
+				<p class="g-pstyle8">North</p>
+				<p class="g-pstyle8">West</p>
+			</div>
+			<div id="g-ai3-43" class="g-md g-aiAbs g-aiPointText" style="top:69.1655%;margin-top:-6.9px;left:17.3569%;width:28px;">
+				<p class="g-pstyle4">7</p>
+			</div>
+			<div id="g-ai3-44" class="g-md g-aiAbs g-aiPointText" style="top:69.5642%;margin-top:-6.9px;left:23.4293%;width:33px;">
+				<p class="g-pstyle4">12</p>
+			</div>
+			<div id="g-ai3-45" class="g-md g-aiAbs g-aiPointText" style="top:69.5642%;margin-top:-6.9px;left:27.8235%;width:33px;">
+				<p class="g-pstyle4">14</p>
+			</div>
+			<div id="g-ai3-46" class="g-md g-aiAbs g-aiPointText" style="top:69.9631%;margin-top:-6.9px;left:41.7119%;width:33px;">
+				<p class="g-pstyle4">25</p>
+			</div>
+			<div id="g-ai3-47" class="g-md g-aiAbs g-aiPointText" style="top:70.5612%;margin-top:-6.9px;left:34.7055%;width:33px;">
+				<p class="g-pstyle4">19</p>
+			</div>
+			<div id="g-ai3-48" class="g-md g-aiAbs g-aiPointText" style="top:70.5612%;margin-top:-6.9px;left:66.0722%;width:33px;">
+				<p class="g-pstyle5">38</p>
+			</div>
+			<div id="g-ai3-49" class="g-md g-aiAbs g-aiPointText" style="top:71.6094%;margin-top:-7.2px;left:45.4205%;width:61px;">
+				<p class="g-pstyle4">Haryana</p>
+			</div>
+			<div id="g-ai3-50" class="g-md g-aiAbs g-aiPointText" style="top:72.7542%;margin-top:-6.9px;left:59.3236%;width:33px;">
+				<p class="g-pstyle5">37</p>
+			</div>
+			<div id="g-ai3-51" class="g-md g-aiAbs g-aiPointText" style="top:73.005%;margin-top:-7.2px;left:17.6318%;width:80px;">
+				<p class="g-pstyle4">Uttarakhand</p>
+			</div>
+			<div id="g-ai3-52" class="g-md g-aiAbs g-aiPointText" style="top:73.7511%;margin-top:-6.9px;left:47.3203%;width:33px;">
+				<p class="g-pstyle4">29</p>
+			</div>
+			<div id="g-ai3-53" class="g-lg g-aiAbs g-aiPointText" style="top:81.284%;margin-top:-29.7px;right:8.8125%;width:159px;">
+				<p class="g-pstyle9"><span class="g-cstyle1">Source: </span>India&rsquo;s Atlas </p>
+				<p class="g-pstyle9">on Extreme Weather</p>
+				<p class="g-pstyle9">Events, Centre for </p>
+				<p class="g-pstyle9">Science and Environment</p>
+			</div>
+			<div id="g-ai3-54" class="g-md g-aiAbs g-aiPointText" style="top:85.5655%;margin-top:-7.2px;left:16.2757%;width:71px;">
+				<p class="g-pstyle4">Telangana</p>
+			</div>
+			<div id="g-ai3-55" class="g-md g-aiAbs g-aiPointText" style="top:85.5655%;margin-top:-7.2px;left:7.6491%;width:75px;">
+				<p class="g-pstyle4">Tamil Nadu</p>
+			</div>
+			<div id="g-ai3-56" class="g-md g-aiAbs g-aiPointText" style="top:88.5561%;margin-top:-13.2px;right:92.7201%;width:69px;">
+				<p class="g-pstyle8">South </p>
+				<p class="g-pstyle8">Peninsula</p>
+			</div>
+			<div id="g-ai3-57" class="g-md g-aiAbs g-aiPointText" style="top:87.5078%;margin-top:-6.9px;left:9.1536%;width:28px;">
+				<p class="g-pstyle4">1</p>
+			</div>
+			<div id="g-ai3-58" class="g-md g-aiAbs g-aiPointText" style="top:88.106%;margin-top:-6.9px;left:16.0561%;width:28px;">
+				<p class="g-pstyle4">6</p>
+			</div>
+			<div id="g-ai3-59" class="g-md g-aiAbs g-aiPointText" style="top:88.3054%;margin-top:-6.9px;left:12.9498%;width:28px;">
+				<p class="g-pstyle4">4</p>
+			</div>
+			<div id="g-ai3-60" class="g-md g-aiAbs g-aiPointText" style="top:88.7041%;margin-top:-6.9px;left:8.0032%;width:28px;">
+				<p class="g-pstyle4">1</p>
+			</div>
+			<div id="g-ai3-61" class="g-md g-aiAbs g-aiPointText" style="top:90.9486%;margin-top:-7.2px;left:12.7259%;width:70px;">
+				<p class="g-pstyle4">Karnataka</p>
+			</div>
+			<div id="g-ai3-62" class="g-md g-aiAbs g-aiPointText" style="top:91.148%;margin-top:-7.2px;left:7.7104%;width:53px;">
+				<p class="g-pstyle4">Kerala</p>
+			</div>
+			<div id="g-ai3-63" class="g-md g-aiAbs g-aiPointText" style="top:95.6338%;margin-top:-7.7px;left:42.5076%;width:282px;">
+				<p class="g-pstyle10">Days with extreme weather events (Jan-April 2022)</p>
+			</div>
+			<div id="g-ai3-64" class="g-md g-aiAbs g-aiPointText" style="top:99.5167%;margin-top:-5.1px;left:7.1494%;width:26px;">
+				<p class="g-pstyle11">0</p>
+			</div>
+			<div id="g-ai3-65" class="g-md g-aiAbs g-aiPointText" style="top:99.5167%;margin-top:-5.1px;left:43.9139%;width:30px;">
+				<p class="g-pstyle11">25</p>
+			</div>
+			<div id="g-ai3-66" class="g-md g-aiAbs g-aiPointText" style="top:99.5167%;margin-top:-5.1px;left:80.9707%;width:30px;">
+				<p class="g-pstyle11">50</p>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		(function (containerId, opts) {
+				var nameSpace = opts.namespace || '';
+				var containers = findContainers(containerId);
+				containers.forEach(resize);
+
+				function resize(container) {
+					var onResize = throttle(update, 200);
+					var waiting = !!window.IntersectionObserver;
+					var observer;
+					update();
+
+					document.addEventListener('DOMContentLoaded', update);
+					window.addEventListener('resize', onResize);
+
+					// NYT Scoop-specific code
+					if (opts.setup) {
+						opts.setup(container).on('cleanup', cleanup);
+					}
+
+					function cleanup() {
+						document.removeEventListener('DOMContentLoaded', update);
+						window.removeEventListener('resize', onResize);
+						if (observer) observer.disconnect();
+					}
+
+					function update() {
+						var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+							width = Math.round(container.getBoundingClientRect().width);
+
+						// Set artboard visibility based on container width
+						artboards.forEach(function (el) {
+							var minwidth = el.getAttribute('data-min-width'),
+								maxwidth = el.getAttribute('data-max-width');
+							if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+								if (!waiting) {
+									selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+								}
+								el.style.display = 'block';
+							} else {
+								el.style.display = 'none';
+							}
+						});
+
+						// Initialize lazy loading on first call
+						if (waiting && !observer) {
+							if (elementInView(container)) {
+								waiting = false;
+								update();
+							} else {
+								observer = new IntersectionObserver(onIntersectionChange, {});
+								observer.observe(container);
+							}
+						}
+					}
+
+					function onIntersectionChange(entries) {
+						// There may be multiple entries relating to the same container
+						// (captured at different times)
+						var isIntersecting = entries.reduce(function (memo, entry) {
+							return memo || entry.isIntersecting;
+						}, false);
+						if (isIntersecting) {
+							waiting = false;
+							// update: don't remove -- we need the observer to trigger an update
+							// when a hidden map becomes visible after user interaction
+							// (e.g. when an accordion menu or tab opens)
+							// observer.disconnect();
+							// observer = null;
+							update();
+						}
+					}
+				}
+
+				function findContainers(id) {
+					// support duplicate ids on the page
+					return selectChildren('.ai2html-responsive', document).filter(function (el) {
+						if (el.getAttribute('id') != id) return false;
+						if (el.classList.contains('ai2html-resizer')) return false;
+						el.classList.add('ai2html-resizer');
+						return true;
+					});
+				}
+
+				// Replace blank placeholder image with actual image
+				function updateImgSrc(img) {
+					var src = img.getAttribute('data-src');
+					if (src && img.getAttribute('src') != src) {
+						img.setAttribute('src', src);
+					}
+				}
+
+				function elementInView(el) {
+					var bounds = el.getBoundingClientRect();
+					return bounds.top < window.innerHeight && bounds.bottom > 0;
+				}
+
+				function selectChildren(selector, parent) {
+					return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+				}
+
+				// based on underscore.js
+				function throttle(func, wait) {
+					var timeout = null, previous = 0;
+					function run() {
+						previous = Date.now();
+						timeout = null;
+						func();
+					}
+					return function () {
+						var remaining = wait - (Date.now() - previous);
+						if (remaining <= 0 || remaining > wait) {
+							clearTimeout(timeout);
+							run();
+						} else if (!timeout) {
+							timeout = setTimeout(run, remaining);
+						}
+					};
+				}
+			})("g-2022_four_month-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+	</script>
+	<!-- End ai2html - 2023-07-12 00:46 -->
+	<!-- Generated by ai2html v0.111.0 - 2023-07-12 00:45 -->
+	<!-- ai file: 2023-4-months.ai -->
+
+
+	
+
+
+	
+
+		
+	</script>
+	<!-- End ai2html - 2023-07-12 00:45 -->
+
+	<!-- End ai2html - 2023-07-11 22:53 -->
+
+
+			</div>
+		</div>
+
+
+				</div>
+			</div>
+		</section>
+
+		<section class="chart-section">
+			<div class="chart-row">
+				<div class="chart">
+
+    <section class="story-body">
+		<h3 class="subhead"> Loss and damage </h3>
+        <p class="body-text serif">We lost 233 lives between January and April 2023, due to extreme weather events, in comparison to 86 human lives during the same period in 2022 which is a staggering 170 per cent increase.  
+
+		</p>
+        <p class="body-text serif">Even if we see the material loss that has resulted from the weather anomalies, it is revealed that extreme weather events damaged at least 0.95 million hectares (mha) of cropland between January and April 2023. In 2022, this number was sizeably small at 0.03 mha of cropland affected in 2022. The increase is devastating at 31 times or over 3,000 per cent.</p>
+		
+		<p class="body-text serif">These estimates on loss and damage are based on media reports that cited state and national-level estimates and the information made available by IMD in the public domain.</p>
+		
+		<p class="body-text serif">Another direct result of the extreme weather events is on the crops and their availability for the masses. Many state governments like that of the largest Indian state of Uttar Pradesh acknowledged the loss that was accrued from the crash crop of the region, wheat. These damages require monetary assistance and then lead to economic distress for the people as well as the governments.</p>
+
+		<p class="body-text serif">India has witnessed an unusually high number of western disturbances (WDs) in the last three months. According to IMD, there were eight WDs in May 2023, which is extremely high for the summer months. This has resulted in large-scale thunderstorms, excessive rainfall, hailstorms, and squalls.     </p>
+    </section>
+
+	<section class="story-body">
+		<h3 class="subhead">  Budget cuts </h3>
+        <p class="body-text serif">Despite the widespread extreme weather events, at least 20 out of 36 Indian states and Union Territories have slashed their budget to for figting natural disasters. In fact, the cumulative budget for all the states/UTs has gone down by 36 per cent in 2022-23, compared to 2021-22.
+
+		</p>
+		<div style="min-height:876px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/vk2eS/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/vk2eS/full.png" alt="" /></noscript></div>
+        <p class="body-text serif">At least 11 states/Uts have recorded 25 per cent or more budget cut this year. The list includes Assam, which recorded its worst-ever floods last year, and Uttar Pradesh, India’s most populous state. </p>
+		
     
+	</section>
 
-  </head>
- 
+</body>
 
-  <body>
-    <div class="mx-auto p-2" style="width: 800px;">
-    <div class="container">
-        <div class="row">
-            <div class="d-flex flex-nowrap">
-                
-              </div>
-            <div class="d-flex justify-content-start"></div>
-            <div class="p-3 mb-2 bg-white text-dark"></div>
-
-            <p></p>
-            <h1> We have cooked ourselves a storm
-            </h1>
-            <h5>By <a target="_new" href="https://www.linkedin.com/in/rajit-sengupta/"> Rajit Sengupta </a>
-
-            </h4>
-            <p></p>
-            <blockquote class="blockquote">
-            <p             
-            class="lead", class="text-end"> <em>In the first four months of 2022, heatwaves were the most frequent extreme weather event. A year later, hailstorms—
-                which the India Meteorological Department classifies as lightning and storms—took over as the most frequent
-                extreme weather event. In fact, of the 84 days with extreme weather events in 2023, hailstorms were reported on 58
-                days. They caused devastation in 33 states/UTs during the first four months of 2023
-            </em>
-            </p>
-            </blockquote>
-           
-            <p>
-            </p>
-            <p class="fs-5">
-                For the past two days, i.e 9th and 10th July 2023, India has been experiencing heavier-than-usual rainfall. The schools and offices were closed down due to the rains and news is filled with reports of rivers overflowing. The Beas river in the state of Himachal Pradesh has washed away three bridges. My work with the Centre for Science and Environment data centre has made me aware of the silent increase in the proliferation of extreme weather events around us. 
-<P> </P>
-                <img src="2023.png" class="img-fluid" class="text-center" alt="Extreme weather event days between January and April 20223 in India">
-                <img src="2022.png" class="img-fluid" class="text-center" alt="Extreme weather event days between January and April 20222 in India">
-                        </p>
-            <p class="fs-5"> 
-                The current project was born out of my work tracking extreme weather events across my country, India. The project compares the occurrence of extreme weather events in the first 120 days of last year, i.e, 2022 and this year, 2023. This year, the 33 Indian states and Union territories of India experienced extreme weather events of one sort or another on 84, out of the 120 days I have mapped.  
-                        </p>
-            <p class="fs-5"> 
-                This is almost the same as the number from last year (2022) when the number of such days totalled 89. For this analysis I have taken the data from the annual publication State of India’s Environment in figures 2023 which is published by the organization I am associated with, the Centre for Science and Environment (CSE) and its flagship magazine Down to Earth. 
-                        </p>
-            <p>
-            </p>
-            <p class="fs-5">    
-                This is a project that has been central to my work as a journalist and one that I believe in implicitly. 70 percent of the days in the first four weeks of the last year experienced extreme weather anomalies.   
-            
-            </p>
-            <p class="fs-5">
-                The difference in the two year is striking as during the first four months of 2022, the most common kind of extreme weather events were heatwaves while in 2023, it was hailstorms. Of the 84 days with extreme weather events in 2023, hailstorms were reported on 58 days.             
-            </p>
-            <p class="fs-5">
-                Whether it is untimely/extreme heatwaves or untimely/extreme hailstorms, the reasons fo the same can be traced back to global warming, weak western disturbances and a string subtropical jet stream. 
-            </p>
-            
-            <h3> Loss and damage </h3>
-            <p class="fs-5">
-                We lost 233 lives between January and April 2023, due to extreme weather events, in comparison to 86 human lives during the same period in 2022 which is a staggering 170 per cent increase.  
-            </p>
-            <img src="State-wise breakup.png" class="img-fluid" class="text-center" alt="State-wise extreme weather events">
-
-            <p class="fs-5">
-                Even if we see the material loss that has resulted from the weather anomalies, it is revealed that extreme weather events damaged at least 0.95 million hectares (mha) of cropland between January and April 2023. In 2022, this number was sizeably small at 0.03 mha of cropland affected in 2022. The increase is devastating at 31 times or over 3,000 per cent. 
-            </p>
-            
-            <p class="fs-5">
-                These estimates on loss and damage are based on media reports that cited state and national-level estimates and the information made available by IMD in the public domain.
-                        </p>
-            <p class="fs-5">
-                Another direct result of the extreme weather events is on the crops and their availability for the masses. Many state governments like that of the largest Indian state of Uttar Pradesh acknowledged the loss that was accrued from the crash crop of the region, wheat. These damages require monetary assistance and then lead to economic distress for the people as well as the governments.
-                        </p>
-             <p class="fs-5">
-                India has witnessed an unusually high number of western disturbances (WDs) in the last three months. According to IMD, there were eight WDs in May 2023, which is extremely high for the summer months. This has resulted in large-scale thunderstorms, excessive rainfall, hailstorms, and squalls.     
-                                        </p>
-
-
-
-            <h3> What it means </h3>
-            <p class="fs-5">
-                It is important for us to understand through data aggregation and competent and large-scale analysis, the true impact of these extreme weather events so that rescue and restoration activities can be carried out effectively. These weather anomalies also provide concrete proof of the ways in which climate change and global warming are dangerously affecting our daily life-patterns.
-            </p>
-            
-            <p class = "fs-6">
-            Raw data  sourced from <a target="_new" href="https://www.downtoearth.org.in/weather_disasters_india/india.html"> INDIA’S ATLAS ON WEATHER DISASTERS
-            </a>
-            </p>
-        </div>
-    </div>
-    </div>
-    </body>
+</html>
